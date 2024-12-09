@@ -8,7 +8,7 @@
     $treciBrojText = get_field('treci_broj_tekst'); // Logo image
 ?>
 
-<div class="counter">
+<section class="counter">
     <div class="counter-wrapper">
         <div class="counter-number-wrapper">
             <span class="counter-number">
@@ -44,4 +44,4 @@
             </p>           
         </div>
     </div>
-</div>
+</section>

@@ -58,9 +58,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marcellus&display=swap');
 /* Document
 	 ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /**
  * 1. Correct the line height in all browsers.
@@ -970,6 +976,43 @@ textarea {
   margin-bottom: 1.5em;
 }
 
+/* General */
+.title {
+  color: #171717;
+  font-size: 48px;
+  font-family: 'Marcellus', serif;
+}
+
+.description {
+  color: #4a4f61;
+  font-size: 20px;
+}
+
+a.button {
+  font-size: 14px;
+  background-color: #171717;
+  font-weight: 500;
+  padding: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: inline-block;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.centered-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1280px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 /* homepage hero */
 .hero {
   min-height: 100vh;
@@ -998,7 +1041,7 @@ textarea {
 
 /* Counter */
 .counter {
-  min-height: 512px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;

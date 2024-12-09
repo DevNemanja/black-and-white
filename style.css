@@ -58,6 +58,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 /* Document
 	 ========================================================================== */
 
@@ -76,6 +77,12 @@ html {
 /**
  * Remove the margin in all browsers.
  */
+
+* {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+}
+
 body {
   margin: 0;
 }
@@ -965,10 +972,12 @@ textarea {
 
 /* homepage hero */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .hero::after {
@@ -985,4 +994,50 @@ textarea {
 .hero-logo {
   z-index: 2;
   max-width: 700px;
+}
+
+/* Counter */
+.counter {
+  min-height: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 100%
+  );
+}
+
+.counter-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.counter-divider {
+  width: 1px;
+  height: 150px;
+  background-color: #cacaca;
+}
+
+.counter-number-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.counter-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 64px;
+  color: #171717;
+}
+
+.counter-text {
+  color: #4a4f61;
+  font-size: 20px;
+  margin: 0;
+  min-width: max-content;
 }

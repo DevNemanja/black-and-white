@@ -1,6 +1,117 @@
 <?php
 
 function mytheme_customize_register($wp_customize) {
+    // Add a section for Store Info
+    $wp_customize->add_section('store_info_section', array(
+        'title'      => __('Store Info', 'mytheme'),
+        'priority'   => 40,
+    ));
+
+    // Wholesale Info Fields
+    $wp_customize->add_setting('wholesale_address', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('wholesale_address', array(
+        'label'      => __('Wholesale Address', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $phone_numbers = ['1', '2', '3', '4']; // Wholesale numbers
+    foreach ($phone_numbers as $number) {
+        $wp_customize->add_setting("wholesale_number_$number", array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ));
+        $wp_customize->add_control("wholesale_number_$number", array(
+            'label'      => __("Wholesale Number $number", 'mytheme'),
+            'section'    => 'store_info_section',
+            'type'       => 'text',
+        ));
+    }
+
+    $wp_customize->add_setting('wholesale_working_hours_mon_fri', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('wholesale_working_hours_mon_fri', array(
+        'label'      => __('Wholesale Working Hours (Mon-Fri)', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('wholesale_working_hours_sat', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('wholesale_working_hours_sat', array(
+        'label'      => __('Wholesale Working Hours (Sat)', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('wholesale_email', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('wholesale_email', array(
+        'label'      => __('Wholesale Email', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'email',
+    ));
+
+    // Retail Info Fields
+    $wp_customize->add_setting('retail_address', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('retail_address', array(
+        'label'      => __('Retail Address', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('retail_phone_number', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('retail_phone_number', array(
+        'label'      => __('Retail Phone Number', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('retail_working_hours_mon_fri', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('retail_working_hours_mon_fri', array(
+        'label'      => __('Retail Working Hours (Mon-Fri)', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('retail_working_hours_sat', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('retail_working_hours_sat', array(
+        'label'      => __('Retail Working Hours (Sat)', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('retail_email', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('retail_email', array(
+        'label'      => __('Retail Email', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'email',
+    ));
+
     $wp_customize->add_section('social_media_section', array(
         'title'      => __('Social Media Links', 'mytheme'),
         'priority'   => 30,
@@ -76,3 +187,15 @@ function mytheme_add_woocommerce_support() {
     add_theme_support('woocommerce');
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
+
+function mytheme_enqueue_styles() {
+    // Enqueue the parent theme stylesheet (if applicable)
+    if (is_child_theme()) {
+        wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    }
+
+    // Enqueue the custom stylesheet
+    wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/custom.css', array(), '1.0.0', 'all');
+}
+
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');

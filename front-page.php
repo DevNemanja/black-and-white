@@ -8,6 +8,7 @@
                         require('template-parts/homepage/retail.php'); 
                         require('template-parts/homepage/embroidery.php'); 
                         require('template-parts/homepage/social.php'); 
+                        require('template-parts/homepage/find-us.php'); 
 
                 ?>
 	</main>

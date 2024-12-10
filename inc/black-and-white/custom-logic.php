@@ -112,12 +112,29 @@ function mytheme_customize_register($wp_customize) {
         'type'       => 'email',
     ));
 
+    // Footer 
+    $wp_customize->add_section('footer', array(
+        'title'      => __('Footer', 'mytheme'),
+        'priority'   => 10,
+    ));
+
+    $wp_customize->add_setting('footer_logo', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
+        'label'      => __('Footer logo', 'mytheme'),
+        'section'    => 'footer',
+        'settings'   => 'footer_logo',
+    )));
+
+
+    // Social Links
     $wp_customize->add_section('social_media_section', array(
         'title'      => __('Social Media Links', 'mytheme'),
         'priority'   => 30,
     ));
 
-    // Social Links
     $wp_customize->add_setting('facebook_link', array(
         'default'   => '',
         'transport' => 'refresh',
@@ -199,3 +216,12 @@ function mytheme_enqueue_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
+
+function mytheme_register_menus() {
+    register_nav_menus(array(
+        'footer_menu_1' => __('Footer Menu 1', 'mytheme'),
+        'footer_menu_2' => __('Footer Menu 2', 'mytheme'),
+        'footer_menu_3' => __('Footer Menu 3', 'mytheme'),
+    ));
+}
+add_action('after_setup_theme', 'mytheme_register_menus');

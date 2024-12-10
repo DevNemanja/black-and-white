@@ -201,3 +201,12 @@ a.button {
   flex-shrink: 0; /* Prevent shrinking below its natural dimensions */
   object-position: center;
 }
+
+/* footer */
+.site-footer {
+  background-color: #171717;
+}
+
+.footer-social-icons .social-icons-list {
+  display: flex;
+}

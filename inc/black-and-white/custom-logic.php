@@ -1,46 +1,72 @@
 <?php
 
-function mytheme_customize_register( $wp_customize ) {
-    // Add a section for Social Media Links
-    $wp_customize->add_section( 'social_media_section' , array(
+function mytheme_customize_register($wp_customize) {
+    $wp_customize->add_section('social_media_section', array(
         'title'      => __('Social Media Links', 'mytheme'),
         'priority'   => 30,
     ));
 
-    // Add settings for each social media link
-    $wp_customize->add_setting( 'facebook_link', array(
+    // Social Links
+    $wp_customize->add_setting('facebook_link', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
-
-    $wp_customize->add_setting( 'twitter_link', array(
-        'default'   => '',
-        'transport' => 'refresh',
-    ));
-
-    $wp_customize->add_setting( 'linkedin_link', array(
-        'default'   => '',
-        'transport' => 'refresh',
-    ));
-
-    // Add controls to input the social media links
-    $wp_customize->add_control( 'facebook_link', array(
+    $wp_customize->add_control('facebook_link', array(
         'label'      => __('Facebook URL', 'mytheme'),
         'section'    => 'social_media_section',
         'type'       => 'url',
     ));
 
-    $wp_customize->add_control( 'twitter_link', array(
-        'label'      => __('Twitter URL', 'mytheme'),
+    $wp_customize->add_setting('instagram_link', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('instagram_link', array(
+        'label'      => __('Instagram URL', 'mytheme'),
         'section'    => 'social_media_section',
         'type'       => 'url',
     ));
 
-    $wp_customize->add_control( 'linkedin_link', array(
-        'label'      => __('LinkedIn URL', 'mytheme'),
+    $wp_customize->add_setting('email_link', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('email_link', array(
+        'label'      => __('Email URL', 'mytheme'),
         'section'    => 'social_media_section',
         'type'       => 'url',
     ));
+
+    // Social Icons
+    $wp_customize->add_setting('facebook_icon', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'facebook_icon', array(
+        'label'      => __('Facebook Icon', 'mytheme'),
+        'section'    => 'social_media_section',
+        'settings'   => 'facebook_icon',
+    )));
+
+    $wp_customize->add_setting('instagram_icon', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'instagram_icon', array(
+        'label'      => __('Instagram Icon', 'mytheme'),
+        'section'    => 'social_media_section',
+        'settings'   => 'instagram_icon',
+    )));
+
+    $wp_customize->add_setting('email_icon', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'email_icon', array(
+        'label'      => __('Email Icon', 'mytheme'),
+        'section'    => 'social_media_section',
+        'settings'   => 'email_icon',
+    )));
 }
 
 add_action( 'customize_register', 'mytheme_customize_register' );

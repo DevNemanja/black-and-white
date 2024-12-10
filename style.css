@@ -977,15 +977,26 @@ textarea {
 }
 
 /* General */
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .title {
   color: #171717;
   font-size: 48px;
   font-family: 'Marcellus', serif;
+  line-height: 1;
+  font-weight: normal;
 }
 
 .description {
   color: #4a4f61;
   font-size: 20px;
+  font-weight: normal;
 }
 
 a.button {
@@ -1009,8 +1020,7 @@ a.button {
   align-items: center;
   gap: 30px;
   max-width: 1280px;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin: 0 auto;
 }
 
 /* homepage hero */
@@ -1083,4 +1093,28 @@ a.button {
   font-size: 20px;
   margin: 0;
   min-width: max-content;
+}
+
+.homepage-social {
+  max-width: 500px;
+}
+
+.homepage-social .title {
+  max-width: 360px;
+}
+
+.homepage-social .description {
+  font-size: 16px;
+}
+
+/* Social links */
+.social-icons-wrapper {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}
+
+.social-icon {
+  list-style: none;
+  width: 42px;
 }

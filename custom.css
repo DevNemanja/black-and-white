@@ -64,6 +64,9 @@ a.button {
   justify-content: center;
   align-items: center;
   position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero::after {
@@ -75,6 +78,11 @@ a.button {
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.hero-small {
+  min-height: 600px;
+  max-height: 600px;
 }
 
 .hero-logo {
@@ -474,4 +482,107 @@ a.button {
   left: 0;
   z-index: 10;
   cursor: pointer;
+}
+
+/* Product */
+.product-category-page {
+  margin-bottom: 100px;
+}
+
+.product-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Ensures the image fits perfectly within the specified size */
+  margin-bottom: 10px; /* Space between the image and the product name */
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 55px;
+  justify-content: center; /* Center the grid within the container if necessary */
+  padding: 20px; /* Optional padding for spacing around the grid */
+  margin-top: 40px;
+}
+
+.product-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #171717;
+}
+
+.product-link {
+  color: #171717;
+  text-decoration: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  gap: 5px;
+  border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  border: 1px solid #171717;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+  color: #171717;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  color: white;
+  background-color: #171717;
+}
+
+.page-numbers li {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #171717;
+}
+
+.woocommerce .woocommerce-ordering,
+.woocommerce-page .woocommerce-ordering {
+  float: none;
+  margin: 0;
+}
+
+.woocommerce-sorting {
+  display: flex;
+  margin-top: 72px;
+  gap: 10px;
+  justify-content: end;
+}
+
+/* Customizing the dropdown select element */
+.woocommerce-sorting select {
+  background-color: #fff;
+  color: #171717;
+  border: 1px solid #171717;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Styling the dropdown options */
+.woocommerce-sorting select option {
+  background-color: #fff;
+  color: #171717;
+  cursor: pointer;
+}
+
+/* Adding hover effect */
+.woocommerce-sorting select:hover {
+  border: 1px solid #171717;
 }

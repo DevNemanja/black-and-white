@@ -6,35 +6,63 @@
 
 get_header(); ?>
 
-<div class="product-category-page">
-    <?php if (is_product_category()) : ?>
-        <header class="category-header">
-            <?php
-            $category = get_queried_object();
-            $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
-            $image_url = wp_get_attachment_url($thumbnail_id);
-            ?>
-            <?php if ($image_url): ?>
-                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($category->name); ?>">
-            <?php endif; ?>
-            
-            <h1><?php echo esc_html($category->name); ?></h1>
-            <h2>Explore Products in NEMANJA <?php echo esc_html($category->name); ?></h2>
-            <p><?php echo esc_html($category->description); ?></p>
-        </header>
-        
-        <div class="products-list">
-            <?php if (have_posts()) : ?>
-                <?php woocommerce_product_loop_start(); ?>
-                    <?php while (have_posts()) : the_post(); ?>
-                        <?php wc_get_template_part('content', 'product'); ?>
-                    <?php endwhile; ?>
-                <?php woocommerce_product_loop_end(); ?>
-            <?php else : ?>
-                <p>No products found in this category.</p>
+
+<main class="site-main">
+    <?php 
+        $term = get_queried_object();
+
+        $naslov = get_field('naslov', $term);
+        $podnaslov = get_field('podnaslov', $term);
+        $naslovna_slika = get_field('slika', $term);
+        $is_small = TRUE;
+
+        $title = get_field('sekundarni_naslov', $term);
+        $text = get_field('opis_ispod_sekundarnog_naslova', $term);
+
+        require('template-parts/hero.php'); 
+        require('template-parts/centered-content.php');
+    ?>
+    <div class="container">
+        <div class="product-category-page">
+            <?php if (is_product_category()) : ?>
+
+                <!-- Add Sorting Dropdown -->
+                <div class="woocommerce-sorting">
+                    <span>Sort by:</span>
+                    <?php woocommerce_catalog_ordering(); ?>
+                </div>
+
+                <div class="products-grid">
+                    <?php if (have_posts()) : ?>
+                        <?php while (have_posts()) : the_post(); ?>
+                            <div class="product-card">
+                                <a href="<?php the_permalink(); ?>" class="product-link">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="product-image">
+                                    <?php else : ?>
+                                        <img src="<?php echo esc_url(woocommerce_placeholder_img_src()); ?>" alt="Placeholder" class="product-image">
+                                    <?php endif; ?>
+                                    <h2 class="product-name"><?php the_title(); ?></h2>
+                                </a>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php else : ?>
+                        <p>No products found in this category.</p>
+                    <?php endif; ?>
+                </div>
+
+                <!-- Add Pagination -->
+                <div class="pagination">
+                    <?php woocommerce_pagination(); ?>
+                </div>
             <?php endif; ?>
         </div>
-    <?php endif; ?>
-</div>
+    </div>
+</main>
+
+
+
+
+
 
 <?php get_footer(); ?>

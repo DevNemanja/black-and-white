@@ -225,3 +225,11 @@ function mytheme_register_menus() {
     ));
 }
 add_action('after_setup_theme', 'mytheme_register_menus');
+
+function custom_woocommerce_products_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && is_product_category()) {
+        // Set the number of products per page
+        $query->set('posts_per_page', 15); // Change 12 to your desired number
+    }
+}
+add_action('pre_get_posts', 'custom_woocommerce_products_per_page');

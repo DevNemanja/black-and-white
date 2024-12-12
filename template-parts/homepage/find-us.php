@@ -43,7 +43,9 @@
                         require('find-us-list.php'); 
                     ?>
                 </div>
-                <img class="find-us-map" src="<?php echo $slika; ?>" alt="<?php echo $title; ?>">
+                <div class="find-us-map">
+                    <img src="<?php echo $slika; ?>" alt="<?php echo $title; ?>">
+                </div>
             </div>
 
             <?php 
@@ -75,7 +77,9 @@
                         require('find-us-list.php'); 
                     ?>
                 </div>
-                <img class="find-us-map" src="<?php echo $slika; ?>" alt="<?php echo $title; ?>">
+                <div class="find-us-map">
+                    <img src="<?php echo $slika; ?>" alt="<?php echo $title; ?>">
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
-<div class="container">
-    <section class="centered-section">
+<section class="centered-content-section">
+    <div class="centered-content">
         <h2 class="title"><?php echo $title; ?></h2>
         <div class="description">
             <?php echo $text; ?>
@@ -8,8 +8,9 @@
             <?php echo $buttonText; ?>
             <?php require(get_template_directory() . '/template-parts/white-right-arrow.php'); ?>
         </a>
-        <?php if ($slika) : ?>
-            <img src="<?php echo $slika; ?>" alt="<?php echo $title; ?>">
-            <?php endif; ?>
-    </section>
-</div>
+    </div>
+
+    <?php if ($slika) : ?>
+        <img class="centered-content-image" src="<?php echo $slika; ?>" alt="<?php echo $title; ?>">
+        <?php endif; ?>
+</section>

@@ -586,3 +586,81 @@ a.button {
 .woocommerce-sorting select:hover {
   border: 1px solid #171717;
 }
+
+/* overlapping images section */
+.embroidery-section {
+  padding-top: 100px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 25%
+  );
+}
+
+.embroidery-text-above-title {
+  font-size: 18px;
+  color: #4a4f61;
+  letter-spacing: 60%;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.embroidery-title {
+  font-size: 48px;
+  font-family: 'Marcellus', serif;
+  color: #171717;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 60px;
+}
+
+.overlapping-wrapper {
+  display: flex;
+  align-items: start;
+  gap: 10%;
+}
+
+.overlapping-images {
+  flex-basis: 45%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.overlapping-image {
+  width: 60%;
+}
+
+.overlapping-image-back {
+  margin-right: 40%;
+  margin-bottom: 27%;
+}
+
+.overlapping-image-front {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.overlapping-content-title {
+  font-size: 36px;
+  font-family: 'Marcellus', serif;
+  color: #171717;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.overlapping-content {
+  padding-top: 12.5%;
+}
+
+.overlapping-content-text {
+  color: #4a4f61;
+}
+
+.overlapping-icon-list-item {
+  font-size: 22px;
+}

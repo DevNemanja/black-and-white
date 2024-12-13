@@ -4,32 +4,30 @@
  * Description: A custom template for displaying the Embroidery page with the title based on the current language.
  */
 
-// Load WordPress header
-get_header();
+    // Load WordPress header
+    get_header();
 
-// Check the current language (Polylang)
-$current_lang = pll_current_language(); // For Polylang
+    $naslov = get_field('naslov');
+    $podnaslov = get_field('podnaslov');
+    $naslovna_slika = get_field('glavna_slika');
 
-// For WPML, you would use: $current_lang = ICL_LANGUAGE_CODE;
+    $title = get_field('sekundarni_naslov');
+    $text = get_field('opis_ispod_sekundarnog_naslova');
 
-// Get the current page title (localized)
-$page_title = get_the_title();
+    require('template-parts/hero.php');
 
-// Check if the page title needs translation
-if ($current_lang == 'en') {
-    // The title should be in English (you can customize the English version here)
-    $translated_title = $page_title; // Default to the page title
-} elseif ($current_lang == 'sr') {
-    // The title should be in Serbian (you can customize the Serbian version here)
-    $translated_title = pll__($page_title); // For Polylang, this function translates the title
-} else {
-    // Default title if the language is not set
-    $translated_title = $page_title;
-}
+    $tekstIznadNaslova = get_field('tekst_iznad_sekundarnog_naslova');
+    $sekNaslov = get_field('sekundarni_naslov');
+    $slikaIza = get_field('slika_iza');
+    $slikaIspred = get_field('slika_ispred');
+    $naslovZaDveSlike = get_field('naslov_za_dve_slike');
+    $tekstDveSlike = get_field('tekst_dve_slike');
+    $poklonTekst = get_field('poklon_tekst');
+    $logoTekst = get_field('logo_tekst');
+    $majicaTekst = get_field('majica_tekst');
 
-// Output the translated title
-echo '<h1>' . esc_html($translated_title) . '</h1>';
-echo '<h1>BRAPOOOO</h1>';
+    require('template-parts/overlapping-images-section.php');
+    
 
 // Load WordPress footer
 get_footer();

@@ -27,6 +27,7 @@
     $majicaTekst = get_field('majica_tekst');
 
     require('template-parts/overlapping-images-section.php');
+    require('template-parts/embroidery-slider-section.php');
     
 
 // Load WordPress footer

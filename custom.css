@@ -659,8 +659,46 @@ a.button {
 
 .overlapping-content-text {
   color: #4a4f61;
+  max-width: 600px;
 }
 
 .overlapping-icon-list-item {
   font-size: 22px;
+}
+
+/* Embroidery slider section */
+.embroidery-slider {
+  margin-top: 100px;
+}
+
+.embroidery-slider-title {
+  font-size: 36px;
+  font-family: 'Marcellus', serif;
+  color: #171717;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.embroidery-slider-text {
+  font-size: 16px;
+  color: #171717;
+  margin: 0;
+  margin-bottom: 30px;
+  max-width: 750px;
+}
+
+.embroidery-image-gallery {
+  display: flex;
+  gap: 35px;
+  max-width: 100%;
+  margin-bottom: 200px;
+}
+
+.embroidery-image-gallery img {
+  max-width: 17.5%; /* Ensure the image scales down if necessary */
+  height: auto; /* Maintain the aspect ratio */
+  flex: 1 1 auto; /* Allow images to grow and shrink based on available space */
+  object-fit: contain; /* Ensure images fit within their container */
 }

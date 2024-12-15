@@ -25,8 +25,8 @@
         </div>
 
         <div>
-            <p><?php echo get_field('od_ponedeljka_do_petka'); ?> - <?php echo $monFriHrs ?></p> 
-            <p><?php echo get_field('subotom'); ?> - <?php echo $satHrs ?></p>
+            <p><?php echo $monFriHrs ?></p> 
+            <p><?php echo $satHrs ?></p>
         </div>
 
     </li>  

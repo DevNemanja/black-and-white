@@ -12,10 +12,18 @@ get_header(); ?>
 
     ?>
     <div class="container">
-        <section class="single-product">
+        <section class="single-product-section">
             <div class="single-product-breadcrumbs-wrapper">
-                <p>Home    Retail      Fashion Fabrics     Fabric Details</p>
-                <p>SEARCH</p>
+                <?php
+                    // Display breadcrumbs on the product page
+                    if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+                        woocommerce_breadcrumb();
+                    }
+                ?>
+                <?php
+                // Display a search form on the product page
+                get_search_form();
+                ?>
             </div>
             <div class="single-product-gallery-section">
                 <div class="single-product-gallery">
@@ -76,58 +84,59 @@ get_header(); ?>
                         <div class="single-product-content">
                             <?php the_content(); ?>
                         </div>
-                        <?php
-                            global $product;
+                            <?php
+                                global $product;
 
-                            if ( ! $product->is_type( 'variable' ) ) {
-                                // Exit if the product is not variable
-                                return;
-                            }
+                                // Check if the product is variable
+                                if ( $product->is_type( 'variable' ) ) {
+                                    // Get the attributes of the product (e.g., Color, Size)
+                                    $attributes = $product->get_attributes();
 
-                            // Get the attributes of the product (e.g., Color, Size)
-                            $attributes = $product->get_attributes();
-
-                            // Check if there are any attributes
-                            if ( ! empty( $attributes ) ) {
-                                // Assuming you want the first attribute (e.g., Color)
-                                $attribute_name = key( $attributes );
-                                $attribute_label = $product->get_attribute( $attribute_name );
-                                $attribute_display_name = wc_attribute_label( $attribute_name ); // Get the attribute's display name (e.g., "Color")
-                                
-                                echo '<h2 class="single-product-variable-title">' . esc_html( $attribute_display_name ) . '</h2>';
-                            }
-
-                            // Get variations of the variable product
-                            $available_variations = $product->get_available_variations();
-
-                            if ( $available_variations ) {
-                                echo '<div class="single-product-product-variations">';
-                                
-                                foreach ( $available_variations as $variation ) {
-                                    $variation_id = $variation['variation_id'];
-                                    $variation_product = wc_get_product( $variation_id );
-
-                                    if ( $variation_product ) {
-                                        $variation_title = $variation_product->get_name();
-                                        $variation_title = str_replace( $product->get_name() . ' -', '', $variation_title );
-                                        $variation_image = wp_get_attachment_image_src( $variation['image_id'], 'thumbnail' );
-                                        $variation_image_url = $variation_image ? $variation_image[0] : wc_placeholder_img_src();
-                                        $variation_permalink = get_permalink( $variation_id ); // Get variation permalink
-
-                                        echo '<div class="single-product-variation">';
-                                        echo '<a href="' . esc_url( $variation_permalink ) . '" class="single-product-variation-link">';
-                                        echo '<img src="' . esc_url( $variation_image_url ) . '" alt="' . esc_attr( $variation_title ) . '" />';
-                                        echo '<h3>' . esc_html( $variation_title ) . '</h3>';
-                                        echo '</a>';
-                                        echo '</div>';
+                                    // Check if there are any attributes
+                                    if ( ! empty( $attributes ) ) {
+                                        // Assuming you want the first attribute (e.g., Color)
+                                        $attribute_name = key( $attributes );
+                                        $attribute_label = $product->get_attribute( $attribute_name );
+                                        $attribute_display_name = wc_attribute_label( $attribute_name ); // Get the attribute's display name (e.g., "Color")
+                                        
+                                        echo '<h2 class="single-product-variable-title">' . esc_html( $attribute_display_name ) . '</h2>';
                                     }
-                                }
 
-                                echo '</div>';
-                            } else {
-                                echo '<p>No variations available.</p>';
-                            }
-                        ?>  
+                                    // Get variations of the variable product
+                                    $available_variations = $product->get_available_variations();
+
+                                    if ( $available_variations ) {
+                                        echo '<div class="single-product-product-variations">';
+                                        
+                                        foreach ( $available_variations as $variation ) {
+                                            $variation_id = $variation['variation_id'];
+                                            $variation_product = wc_get_product( $variation_id );
+
+                                            if ( $variation_product ) {
+                                                $variation_title = $variation_product->get_name();
+                                                $variation_title = str_replace( $product->get_name() . ' -', '', $variation_title );
+                                                $variation_image = wp_get_attachment_image_src( $variation['image_id'], 'thumbnail' );
+                                                $variation_image_url = $variation_image ? $variation_image[0] : wc_placeholder_img_src();
+                                                $variation_permalink = get_permalink( $variation_id ); // Get variation permalink
+
+                                                echo '<div class="single-product-variation">';
+                                                echo '<a href="' . esc_url( $variation_permalink ) . '" class="single-product-variation-link">';
+                                                echo '<img src="' . esc_url( $variation_image_url ) . '" alt="' . esc_attr( $variation_title ) . '" />';
+                                                echo '<h3>' . esc_html( $variation_title ) . '</h3>';
+                                                echo '</a>';
+                                                echo '</div>';
+                                            }
+                                        }
+
+                                        echo '</div>';
+                                    } else {
+                                        echo '<p>No variations available.</p>';
+                                    }
+                                } else {
+                                    // For non-variable products, you can optionally show a message or content
+                                    echo '';
+                                }
+                            ?>
                     </div>
             </div>
             <div class="single-product-details-section">

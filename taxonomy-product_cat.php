@@ -27,13 +27,20 @@ get_header(); ?>
             <?php if (is_product_category()) : ?>
 
                 <!-- Add Sorting Dropdown -->
-                <div class="woocommerce-sorting">
-                    <span>Sort by:</span>
-                    <?php woocommerce_catalog_ordering(); ?>
-                </div>
+                <?php 
+                    ob_start(); 
+                    woocommerce_catalog_ordering(); 
+                    $sorting_html = ob_get_clean();
 
+                    if ( ! empty( $sorting_html ) ) : ?>
+                        <div class="woocommerce-sorting">
+                            <span>Sort by:</span>
+                            <?php echo $sorting_html; ?>
+                        </div>
+                <?php endif; ?>
+
+                <?php if (have_posts()) : ?>
                 <div class="products-grid">
-                    <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
                             <div class="product-card">
                                 <a href="<?php the_permalink(); ?>" class="product-link">
@@ -46,10 +53,10 @@ get_header(); ?>
                                 </a>
                             </div>
                         <?php endwhile; ?>
+                    </div>
                     <?php else : ?>
-                        <p>No products found in this category.</p>
+                        <p class="product-not-found-any">No products found in this category.</p>
                     <?php endif; ?>
-                </div>
 
                 <!-- Add Pagination -->
                 <div class="pagination">

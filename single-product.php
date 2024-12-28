@@ -20,10 +20,7 @@ get_header(); ?>
                         woocommerce_breadcrumb();
                     }
                 ?>
-                <?php
-                // Display a search form on the product page
-                get_search_form();
-                ?>
+
             </div>
             <div class="single-product-gallery-section">
                 <div class="single-product-gallery">

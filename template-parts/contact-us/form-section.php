@@ -4,9 +4,16 @@
     $slika = get_field('slika_pored_forme');
     $naslovVeleprodaja = get_field('naslov_iznad_podataka_za_veleprodaju');
     $naslovMaloprodaja = get_field('naslov_iznad_podataka_za_maloprodaju');
+
+    // Get the form ID dynamically from ACF
+    $form_id = get_field('form_shortcode'); // Replace 'contact_form_id' with your actual ACF field name
 ?>
 
-
+<style>
+    .form-container button::after {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/images/arrow-right.png");
+    }
+</style>
 
 <section class="form-section">
     <div class="container">
@@ -16,7 +23,16 @@
             <?php if (!empty($slika)) : ?>
                 <img class="form-image" src="<?php echo $slika; ?>" alt="<?php echo !empty($title) ? $title : ''; ?>">
             <?php endif; ?>
-            <div class="form-mock"></div>
+            <div class="form-container">
+                <?php 
+                    if ($form_id) {
+                        // Generate and display the Contact Form 7 shortcode dynamically
+                        echo do_shortcode('[contact-form-7 id="' . esc_attr($form_id) . '" title="Contact form"]');
+                    } else {
+                        echo 'No contact form ID found.';
+                    };
+                ?>
+            </div>
         </div>
         <div>
             <h3 class="form-info-title"><?php echo $naslovVeleprodaja; ?></h3>

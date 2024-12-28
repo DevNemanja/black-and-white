@@ -233,3 +233,14 @@ function custom_woocommerce_products_per_page($query) {
     }
 }
 add_action('pre_get_posts', 'custom_woocommerce_products_per_page');
+
+function enqueue_custom_js() {
+    wp_enqueue_script(
+        'custom-js', // Handle for the script
+        get_template_directory_uri() . '/custom.js', // Path to the script
+        array(), // Dependencies (if any)
+        '1.0.0', // Version number
+        true // Load in the footer
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_js');

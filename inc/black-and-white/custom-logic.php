@@ -244,3 +244,11 @@ function enqueue_custom_js() {
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_js');
+
+function enqueue_slider_assets() {
+    // Swiper CSS
+    wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), '9.0.0');
+    // Swiper JS
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), '9.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_slider_assets');

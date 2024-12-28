@@ -43,3 +43,31 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(counter);
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper('.swiper', {
+    loop: true, // Enable looping
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    slidesPerView: 5, // Display 5 slides per page
+    spaceBetween: 10, // Space between slides
+    centeredSlides: true, // Align slides to the start
+    autoplay: {
+      delay: 3000, // Auto-slide every 3 seconds
+    },
+    breakpoints: {
+      // Adjust slides per view for smaller screens
+      1280: {
+        slidesPerView: 5,
+      },
+      768: {
+        slidesPerView: 3, // Show 3 slides for tablets
+      },
+      480: {
+        slidesPerView: 1, // Show 1 slide for small screens
+      },
+    },
+  });
+});

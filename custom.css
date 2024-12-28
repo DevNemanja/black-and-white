@@ -119,11 +119,7 @@ a.button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(16, 16, 16, 0) 100%
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 100%);
 }
 
 .counter-wrapper {
@@ -586,11 +582,7 @@ a.button {
 /* overlapping images section */
 .embroidery-section {
   padding-top: 100px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(16, 16, 16, 0) 25%
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 25%);
 }
 
 .embroidery-text-above-title {
@@ -690,13 +682,35 @@ a.button {
   gap: 35px;
   max-width: 100%;
   margin-bottom: 200px;
+  overflow: hidden;
 }
 
-.embroidery-image-gallery img {
-  max-width: 17.5%; /* Ensure the image scales down if necessary */
-  height: auto; /* Maintain the aspect ratio */
-  flex: 1 1 auto; /* Allow images to grow and shrink based on available space */
-  object-fit: contain; /* Ensure images fit within their container */
+.swiper-button-next {
+  border: 1px solid red;
+  width: 10px;
+  height: 10px;
+}
+
+.embroidery-image-gallery .swiper {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+  background: #fff;
+  border: 1px solid #171717;
+  opacity: 1;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+  background: #171717;
 }
 
 /* About us */

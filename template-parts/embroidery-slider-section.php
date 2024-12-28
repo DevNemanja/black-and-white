@@ -9,7 +9,7 @@
         <h3 class="embroidery-slider-title"><?php echo $naslov; ?></h3>
         <p class="embroidery-slider-text"><?php echo $tekst; ?></p>
         <div class="embroidery-image-gallery">
-            <div class="swiper">
+            <div class="embroidery-swiper swiper">
                 <div class="swiper-wrapper">
                     <?php
                     for ($i = 1; $i <= 10; $i++) {

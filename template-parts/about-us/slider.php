@@ -14,34 +14,46 @@
 
 <section>
     <div class="container">
-        <div class="about-us-slider">
-            <div class="about-us-slider-item">
-                <div class="about-us-slider-content">
-                    <h3 class="about-us-slider-title"><?php echo $prviSlajdNaslov; ?></h3>
-                    <p class="about-us-slider-text"><?php echo $prviSlajdTekst; ?></p>
+        <div class="swiper-container">
+            <div class="about-us-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class=" about-us-slider-item">
+                            <div class="about-us-slider-content">
+                                <h3 class="about-us-slider-title"><?php echo $prviSlajdNaslov; ?></h3>
+                                <p class="about-us-slider-text"><?php echo $prviSlajdTekst; ?></p>
+                            </div>
+                            <div class="about-us-slider-image">
+                                <img src="<?php echo $prviSlajdSlika; ?>" alt="<?php echo $prviSlajdNaslov; ?>" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="about-us-slider-item">
+                            <div class="about-us-slider-content">
+                                <h3 class="about-us-slider-title"><?php echo $drugiSlajdNaslov; ?></h3>
+                                <p class="about-us-slider-text"><?php echo $drugiSlajdTekst; ?></p>
+                            </div>
+                            <div class="about-us-slider-image">
+                                <img src="<?php echo $drugiSlajdSlika; ?>" alt="<?php echo $drugiSlajdNaslov; ?>" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="about-us-slider-item">
+                            <div class="about-us-slider-content">
+                                <h3 class="about-us-slider-title"><?php echo $treciSlajdNaslov; ?></h3>
+                                <p class="about-us-slider-text"><?php echo $treciSlajdTekst; ?></p>
+                            </div>
+                            <div class="about-us-slider-image">
+                                <img src="<?php echo $treciSlajdSlika; ?>" alt="<?php echo $treciSlajdNaslov; ?>" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-us-slider-image">
-                    <img src="<?php echo $prviSlajdSlika; ?>" alt="<?php echo $prviSlajdNaslov; ?>" />
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <!-- <div class="about-us-slider-item">
-                <div class="about-us-slider-content">
-                    <h3 class="about-us-slider-title"><?php echo $drugiSlajdNaslov; ?></h3>
-                    <p class="about-us-slider-text"><?php echo $drugiSlajdTekst; ?></p>
-                </div>
-                <div class="about-us-slider-image">
-                    <img src="<?php echo $drugiSlajdSlika; ?>" alt="<?php echo $drugiSlajdNaslov; ?>" />
-                </div>
-            </div>
-            <div class="about-us-slider-item">
-                <div class="about-us-slider-content">
-                    <h3 class="about-us-slider-title"><?php echo $treciSlajdNaslov; ?></h3>
-                    <p class="about-us-slider-text"><?php echo $treciSlajdTekst; ?></p>
-                </div>
-                <div class="about-us-slider-image">
-                    <img src="<?php echo $treciSlajdSlika; ?>" alt="<?php echo $treciSlajdNaslov; ?>" />
-                </div>
-            </div> -->
+
         </div>
     </div>
 </section>

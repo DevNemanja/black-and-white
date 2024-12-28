@@ -71,3 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper('.about-us-slider', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    loop: true, // Enables infinite loop
+    autoplay: {
+      delay: 3000, // Delay between slides
+    },
+  });
+});

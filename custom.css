@@ -32,6 +32,11 @@ a.button {
   color: white;
   text-decoration: none;
   line-height: 1;
+  transition: background-color 0.3s;
+}
+
+a.button:hover {
+  background-color: #333; /* Darker black on hover */
 }
 
 .centered-content {
@@ -183,6 +188,11 @@ a.button {
 .social-icon {
   list-style: none;
   width: 42px;
+  transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
 }
 
 /* Find us */
@@ -440,7 +450,12 @@ a.button {
   align-items: center;
   position: relative;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
+  transition: background-size 0.2s;
+}
+
+.assortment-link-wrapper:hover {
+  background-size: 102%;
 }
 
 .assortment-link-wrapper .overlay {
@@ -451,6 +466,11 @@ a.button {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.25); /* Black with 15% opacity */
   pointer-events: none; /* Ensures the overlay does not block interactions */
+  transition: background-color 0.2s;
+}
+
+.assortment-link-wrapper:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.35); /* Black with 15% opacity */
 }
 
 .assortment-link-title {
@@ -459,6 +479,11 @@ a.button {
   z-index: 20;
   font-size: 28px;
   font-weight: 500;
+  transition: font-size 0.2s;
+}
+
+.assortment-link-wrapper:hover .assortment-link-title {
+  font-size: 30px;
 }
 
 .assortment-link-button {
@@ -474,6 +499,11 @@ a.button {
   left: 0;
   z-index: 10;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.assortment-link-button:hover {
+  background-color: #333;
 }
 
 /* Product */
@@ -718,7 +748,22 @@ a.button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 0;
+}
+
+.about-us-slider {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  padding: 80px 0 40px;
+  margin-bottom: 60px;
+}
+
+.about-us-slider .swiper-pagination {
+  display: flex;
+  justify-content: start;
+  bottom: 45px !important;
 }
 
 .about-us-slider-image {
@@ -739,6 +784,7 @@ a.button {
 .about-us-slider-text {
   color: #4a4f61;
   max-width: 720px;
+  padding-right: 50px;
 }
 
 /* icons-section */
@@ -806,12 +852,11 @@ a.button {
   margin-bottom: 30px;
   margin-left: -50px;
   padding: 50px;
-  padding-bottom: 26px;
 }
 
 .form-container textarea[name='your-message'] {
   width: 100%; /* Make it responsive to container */
-  height: 150px; /* Set a smaller height */
+  height: 120px; /* Set a smaller height */
 }
 
 .form-container p {

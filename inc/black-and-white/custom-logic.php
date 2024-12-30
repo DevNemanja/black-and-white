@@ -112,20 +112,20 @@ function mytheme_customize_register($wp_customize) {
         'type'       => 'email',
     ));
 
-    // Footer 
-    $wp_customize->add_section('footer', array(
-        'title'      => __('Footer', 'mytheme'),
+    // Logo 
+    $wp_customize->add_section('logo', array(
+        'title'      => __('Logo', 'mytheme'),
         'priority'   => 10,
     ));
 
-    $wp_customize->add_setting('footer_logo', array(
+    $wp_customize->add_setting('main_logo', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
-        'label'      => __('Footer logo', 'mytheme'),
-        'section'    => 'footer',
-        'settings'   => 'footer_logo',
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'main_logo', array(
+        'label'      => __('Logo', 'mytheme'),
+        'section'    => 'logo',
+        'settings'   => 'main_logo',
     )));
 
 

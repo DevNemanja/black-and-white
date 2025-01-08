@@ -86,3 +86,35 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Main Swiper (shows one image at a time)
+  const mainSwiper = new Swiper('.single-product-swiper', {
+      direction: 'vertical',
+      loop: true,
+      slidesPerView: 1, // Show one slide at a time
+  });
+
+  // Pagination Swiper (shows up to 10 images)
+  const paginationSwiper = new Swiper('.single-product-swiper-pagination', {
+      direction: 'vertical',
+      slidesPerView: 10, // Show up to 10 slides
+      spaceBetween: 10, // Optional: spacing between slides
+      slideToClickedSlide: true, // Enable clicking slides to control the Swiper
+  });
+
+  // Synchronize the two Swipers
+  paginationSwiper.on('click', (swiper) => {
+      mainSwiper.slideTo(swiper.clickedIndex); // Change main Swiper to match clicked slide in pagination Swiper
+  });
+
+  mainSwiper.on('slideChange', () => {
+    const activeIndex = mainSwiper.realIndex;
+
+    // Remove custom-active class from all slides in pagination
+    paginationSwiper.slides.forEach((slide) => slide.classList.remove('custom-active'));
+
+    // Add custom-active class to the currently active slide in pagination
+    paginationSwiper.slides[activeIndex]?.classList.add('custom-active');  });
+});
+

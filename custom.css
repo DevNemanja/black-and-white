@@ -1046,10 +1046,16 @@ a.button:hover {
   color: #4a4f61;
 }
 
-.single-product-gallery {
+.single-product-gallery-slider {
   display: flex;
   gap: 12px;
-  flex-basis: 50%;
+  width: 815px;
+  height: 736px;
+}
+
+.single-product-gallery .single-product-main-image {
+  width: 100%;
+  height: 100%;
 }
 
 .single-product-images {
@@ -1057,10 +1063,12 @@ a.button:hover {
   flex-direction: column;
   gap: 6px;
   width: 72px;
+  height: 736px;
 }
 
 .single-product-main-image {
-  width: 100%;
+  width: 736px;
+  height: 736px;
 }
 
 .single-product-main-image img {
@@ -1098,6 +1106,7 @@ a.button:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 55px;
+  width: 100%;
   margin-bottom: 80px;
 }
 
@@ -1110,9 +1119,6 @@ a.button:hover {
   margin-bottom: 35px;
 }
 
-.single-product-upsells {
-}
-
 .single-product-upsells h2 {
   font-weight: 500;
   font-size: 20px;
@@ -1123,6 +1129,8 @@ a.button:hover {
 
 .single-product-upsell-products {
   margin: 0;
+  display: flex;
+  gap: 12px;
 }
 
 .single-product-upsell-products li {
@@ -1154,4 +1162,30 @@ a.button:hover {
   font-size: 24px;
   text-align: center;
   margin: 100px 0 200px;
+}
+
+.single-product-swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.single-product-swiper-pagination .swiper-slide {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.single-product-swiper-pagination .swiper-slide:hover {
+  opacity: 1;
+}
+
+.single-product-swiper-pagination .swiper-slide.custom-active {
+  opacity: 1;
+}
+
+.single-product-swiper-pagination .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
 }

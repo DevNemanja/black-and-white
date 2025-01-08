@@ -540,16 +540,39 @@ a.button:hover {
 }
 
 .mobile-nav-logo {
-  display: none;
-
   @media screen and (max-width: 1240px) {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.4s;
     display: block;
-    width: 150px;
+    width: 200px;
     transition-delay: 0.6s;
   }
+}
+
+.mobile-nav-addition {
+  display: none;
+
+  @media screen and (max-width: 1240px) {
+    display: block;
+  }
+}
+
+.navigation .social-icons-wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s;
+  transition-delay: 0.7s;
+}
+
+.navigation.is-active .social-icons-wrapper {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .navigation.is-active .mobile-nav-logo {

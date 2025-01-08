@@ -507,6 +507,7 @@ a.button:hover {
   }
 
   @media screen and (max-width: 768px) {
+    background: rgba(255, 255, 255, 0.98);
     width: 100%;
     text-align: center;
     padding: 140px 20px;

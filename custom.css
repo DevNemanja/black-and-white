@@ -541,10 +541,14 @@ a.button:hover {
 }
 
 .product-image {
-  width: 250px;
-  height: 250px;
+  width: 100%;
   object-fit: cover; /* Ensures the image fits perfectly within the specified size */
   margin-bottom: 10px; /* Space between the image and the product name */
+  display: block;
+}
+
+.product-image-wrapper {
+  border: 1px solid red;
 }
 
 .products-grid {

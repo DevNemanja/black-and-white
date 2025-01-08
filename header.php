@@ -28,11 +28,9 @@
 	 <header class="site-header">
 		<div class="container">
 			<div class="header">
-				<div>
-					<a href="<?php echo esc_url(home_url(null, get_locale())); ?>">
-						<img src="<?php echo esc_url(get_theme_mod('footer_logo')); ?>" alt="Logo" class="header-logo">
-					</a>
-				</div>
+				<a class="header-logo-link" href="<?php echo esc_url(home_url(null, get_locale())); ?>">
+					<img src="<?php echo esc_url(get_theme_mod('footer_logo')); ?>" alt="Logo" class="header-logo">
+				</a>
 				
 				<button type="button" class="hamburger" for="check">
 					<span></span>

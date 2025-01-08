@@ -119,6 +119,10 @@ a.button:hover {
   @media screen and (max-width: 1240px) {
     min-height: 600px;
   }
+
+  @media screen and (max-width: 768px) {
+    min-height: 400px;
+  }
 }
 
 .hero::after {

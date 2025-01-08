@@ -7,10 +7,7 @@ get_header(); ?>
 
 
 <main>
-    <?php 
 
-
-    ?>
     <div class="container">
         <section class="single-product-section">
             <div class="single-product-breadcrumbs-wrapper">

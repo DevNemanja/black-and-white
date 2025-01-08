@@ -16,7 +16,20 @@
         <?php endif; ?>
     </div>
 
-    <?php if (!empty($slika)) : ?>
+    <?php if (!empty($video)) : ?>
+        <div class="centered-content-video-wrapper">
+            <video autoplay muted loop>
+                <source src="<?php echo esc_url($video); ?>" type="video/mp4" />
+            </video>
+        </div>
+        
+    <?php endif; ?>
+
+
+
+    <?php if (!empty($slika) AND empty($video)) : ?>
         <img class="centered-content-image" src="<?php echo $slika; ?>" alt="<?php echo !empty($title) ? $title : ''; ?>">
     <?php endif; ?>
 </section>
+
+<?php $video = null; ?>

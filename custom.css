@@ -90,6 +90,10 @@ a.button:hover {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 1240px) {
+    min-height: 600px;
+  }
 }
 
 .hero::after {
@@ -127,6 +131,14 @@ a.button:hover {
   z-index: 2;
   max-width: 700px;
   padding: 0 40px;
+
+  @media screen and (max-width: 1240px) {
+    max-width: 500px;
+  }
+
+  @media screen and (max-width: 1240px) {
+    max-width: 300px;
+  }
 }
 
 .hero-title {
@@ -167,17 +179,35 @@ a.button:hover {
     rgba(0, 0, 0, 0.2) 0%,
     rgba(16, 16, 16, 0) 100%
   );
+
+  @media screen and (max-width: 768px) {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(16, 16, 16, 0) 100%
+    );
+  }
 }
 
 .counter-wrapper {
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .counter-divider {
   width: 1px;
   height: 150px;
   background-color: #cacaca;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 1px;
+    margin: 30px;
+  }
 }
 
 .counter-number-wrapper {
@@ -193,6 +223,10 @@ a.button:hover {
   font-family: "DM Serif Display", serif;
   font-size: 64px;
   color: #171717;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 32px;
+  }
 }
 
 .counter-text {
@@ -200,6 +234,10 @@ a.button:hover {
   font-size: 20px;
   margin: 0;
   min-width: max-content;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 16px;
+  }
 }
 
 /* Homepage social links */

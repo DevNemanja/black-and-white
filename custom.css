@@ -1,15 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 /* General */
 .container {
   max-width: 1920px;
   margin: 0 auto;
   padding-left: 100px;
   padding-right: 100px;
+
+  @media screen and (max-width: 1240px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .title {
   color: #171717;
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: normal;
 }
@@ -84,7 +93,7 @@ a.button:hover {
 }
 
 .hero::after {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -117,6 +126,7 @@ a.button:hover {
 .hero-logo {
   z-index: 2;
   max-width: 700px;
+  padding: 0 40px;
 }
 
 .hero-title {
@@ -132,7 +142,7 @@ a.button:hover {
 .hero-title h1 {
   margin: 0;
   font-size: 96px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: 400;
 }
@@ -140,7 +150,7 @@ a.button:hover {
 .hero-title p {
   margin: 0;
   font-size: 32px;
-  font-family: 'Inter', serif;
+  font-family: "Inter", serif;
   line-height: 1;
   font-weight: 400;
 }
@@ -152,7 +162,11 @@ a.button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 100%
+  );
 }
 
 .counter-wrapper {
@@ -176,7 +190,7 @@ a.button:hover {
 }
 
 .counter-number {
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
   font-size: 64px;
   color: #171717;
 }
@@ -349,16 +363,93 @@ a.button:hover {
   width: 100%;
   color: white;
   font-size: 20px;
+
+  @media screen and (max-width: 1240px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.navigation {
+  @media screen and (max-width: 1240px) {
+    transform: translateX(100%);
+    background: rgba(255, 255, 255, 0.92);
+    color: #171717;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 80px;
+    padding-top: 160px;
+    text-align: right;
+    transition: transform 0.3s;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    padding: 140px 20px;
+  }
+}
+
+.navigation.is-active {
+  transform: translateX(0%);
 }
 
 .header ul {
   margin: 0;
   display: flex;
   gap: 40px;
+
+  @media screen and (max-width: 1240px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
-.header li {
+.navigation li {
   list-style: none;
+
+  @media screen and (max-width: 1240px) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+  }
+}
+
+/* Stagger effect on smaller screens */
+@media screen and (max-width: 1240px) {
+  .navigation li:nth-child(1) {
+    transition-delay: 0s;
+  }
+
+  .navigation li:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .navigation li:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .navigation li:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+
+  .navigation li:nth-child(5) {
+    transition-delay: 0.4s;
+  }
+
+  .navigation li:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+}
+
+.navigation.is-active li {
+  @media screen and (max-width: 1240px) {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .header a {
@@ -678,7 +769,11 @@ a.button:hover {
 /* overlapping images section */
 .embroidery-section {
   padding-top: 100px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 25%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 25%
+  );
 }
 
 .embroidery-text-above-title {
@@ -692,7 +787,7 @@ a.button:hover {
 
 .embroidery-title {
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -729,7 +824,7 @@ a.button:hover {
 
 .overlapping-content-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -757,7 +852,7 @@ a.button:hover {
 
 .embroidery-slider-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -800,12 +895,14 @@ a.button:hover {
   bottom: 0;
 }
 
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet {
   background: #fff;
   border: 1px solid #171717;
   opacity: 1;
 }
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet-active {
   background: #171717;
 }
 
@@ -839,7 +936,7 @@ a.button:hover {
 
 .about-us-slider-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -891,7 +988,7 @@ a.button:hover {
 .form-section-title {
   color: #171717;
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: normal;
   margin-bottom: 20px;
@@ -929,7 +1026,7 @@ a.button:hover {
   padding: 50px;
 }
 
-.form-container textarea[name='your-message'] {
+.form-container textarea[name="your-message"] {
   width: 100%; /* Make it responsive to container */
   height: 120px; /* Set a smaller height */
 }
@@ -940,8 +1037,7 @@ a.button:hover {
 }
 
 .form-container label,
-.form-container label span 
-.wp-block-contact-form-7-contact-form-selector label,
+.form-container label span .wp-block-contact-form-7-contact-form-selector label,
 .wp-block-contact-form-7-contact-form-selector label span {
   max-width: 100%;
   display: block;
@@ -974,9 +1070,9 @@ a.button:hover {
   border: 1px solid white;
   background-color: #fff;
   padding: 8px;
-} 
+}
 
-.wpcf7-form  {
+.wpcf7-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1043,7 +1139,7 @@ a.button:hover {
 
 /* Style the submit button */
 .wpcf7-form button,
-.form-container input[type='submit'],
+.form-container input[type="submit"],
 .form-container button {
   display: flex;
   align-items: center;
@@ -1061,7 +1157,7 @@ a.button:hover {
 }
 
 .form-container button::after {
-  content: '';
+  content: "";
   width: 10px;
   height: 10px;
   display: block;
@@ -1098,7 +1194,7 @@ a.button:hover {
   font-weight: 400;
   text-transform: uppercase;
   color: #171717;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   margin: 0;
   margin-bottom: 16px;
   line-height: 1.2;
@@ -1261,4 +1357,64 @@ a.button:hover {
   padding: 140px 40px;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+/* hamburger */
+.hamburger {
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+  transform: scale(0.5);
+  display: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  @media screen and (max-width: 1240px) {
+    display: flex;
+  }
+}
+
+.hamburger.is-active {
+  z-index: 101;
+}
+
+.hamburger span {
+  background: #fff;
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.hamburger span:nth-of-type(1) {
+  width: 50%;
+}
+
+.hamburger span:nth-of-type(2) {
+  width: 100%;
+}
+
+.hamburger span:nth-of-type(3) {
+  width: 75%;
+}
+
+.hamburger.is-active span {
+  background: #171717;
+}
+
+.hamburger.is-active span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(8px, 0px);
+}
+
+.hamburger.is-active span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+.hamburger.is-active span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(30px, -11px) rotatez(45deg);
 }

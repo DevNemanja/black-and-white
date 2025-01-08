@@ -118,3 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
     paginationSwiper.slides[activeIndex]?.classList.add('custom-active');  });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  var hamburger = document.querySelector('.hamburger');
+  var nav = document.querySelector('.navigation');
+
+  
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('is-active');
+    nav.classList.toggle('is-active');
+  });
+});
+

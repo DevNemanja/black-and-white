@@ -34,7 +34,13 @@
 					</a>
 				</div>
 				
-				<nav>
+				<button type="button" class="hamburger" for="check">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+
+				<nav class="navigation">
 					<?php
 						wp_nav_menu(
 							array(

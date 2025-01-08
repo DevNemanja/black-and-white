@@ -47,6 +47,8 @@
 							)
 						);
 					?>
+					<img class="mobile-nav-logo" src="<?php echo get_template_directory_uri(); ?>/images/black-logo.svg" />
+
 				</nav>
 			</div>
 

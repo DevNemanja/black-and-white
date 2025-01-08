@@ -174,6 +174,7 @@ a.button:hover {
   position: relative;
   z-index: 10;
   text-align: center;
+  padding: 0 20px;
 }
 
 .hero-title h1 {
@@ -182,6 +183,14 @@ a.button:hover {
   font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: 400;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 64px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 48px;
+  }
 }
 
 .hero-title p {
@@ -190,6 +199,14 @@ a.button:hover {
   font-family: "Inter", serif;
   line-height: 1;
   font-weight: 400;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 1240px) {
+    font-size: 18px;
+  }
 }
 
 /* Counter */
@@ -442,7 +459,7 @@ a.button:hover {
   width: 100%;
   height: 100px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
-  z-index: 10;
+  z-index: 110;
   padding-top: 50px;
   padding-bottom: 100px;
 }
@@ -483,12 +500,25 @@ a.button:hover {
     padding-top: 160px;
     text-align: right;
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
   @media screen and (max-width: 768px) {
     width: 100%;
     text-align: center;
     padding: 140px 20px;
+  }
+}
+
+.navigation::after {
+  @media screen and (max-width: 1240px) {
+    content: "";
+    border: 2px solid #171717;
+    inset: 20px;
+    position: absolute;
   }
 }
 
@@ -508,13 +538,33 @@ a.button:hover {
   }
 }
 
+.mobile-nav-logo {
+  display: none;
+
+  @media screen and (max-width: 1240px) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s;
+    display: block;
+    width: 150px;
+    transition-delay: 0.6s;
+  }
+}
+
+.navigation.is-active .mobile-nav-logo {
+  @media screen and (max-width: 1240px) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .navigation li {
   list-style: none;
 
   @media screen and (max-width: 1240px) {
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.3s;
+    transition: all 0.4s;
   }
 }
 
@@ -672,6 +722,13 @@ a.button:hover {
   margin: 72px auto 100px;
   justify-content: center;
   gap: 34px;
+
+  @media screen and (max-width: 1240px) {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 40px;
+    margin-top: 0;
+  }
 }
 
 .assortment-link {
@@ -792,6 +849,10 @@ a.button:hover {
   margin-top: 6px;
   font-size: 20px;
   font-weight: 600;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 16px;
+  }
 }
 
 .products-grid {
@@ -801,6 +862,15 @@ a.button:hover {
   justify-content: center; /* Center the grid within the container if necessary */
   padding: 20px; /* Optional padding for spacing around the grid */
   margin-top: 40px;
+
+  @media screen and (max-width: 1240px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0;
+  }
 }
 
 .product-name {
@@ -902,6 +972,11 @@ a.button:hover {
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    letter-spacing: 40%;
+  }
 }
 
 .embroidery-title {
@@ -912,12 +987,20 @@ a.button:hover {
   margin: 0;
   line-height: 1;
   margin-bottom: 60px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .overlapping-wrapper {
   display: flex;
   align-items: start;
   gap: 10%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .overlapping-images {
@@ -949,6 +1032,10 @@ a.button:hover {
   margin: 0;
   line-height: 1;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .overlapping-content {
@@ -962,11 +1049,25 @@ a.button:hover {
 
 .overlapping-icon-list-item {
   font-size: 22px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.overlapping-icon-list-item svg {
+  @media screen and (max-width: 768px) {
+    width: 35px;
+  }
 }
 
 /* Embroidery slider section */
 .embroidery-slider {
   margin-top: 100px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 80px;
+  }
 }
 
 .embroidery-slider-title {
@@ -977,6 +1078,10 @@ a.button:hover {
   margin: 0;
   line-height: 1;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .embroidery-slider-text {
@@ -993,6 +1098,10 @@ a.button:hover {
   max-width: 100%;
   margin-bottom: 200px;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 100px;
+  }
 }
 
 .swiper-button-next {
@@ -1030,6 +1139,10 @@ a.button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .about-us-slider {
@@ -1046,6 +1159,10 @@ a.button:hover {
   display: flex;
   justify-content: start;
   bottom: 45px !important;
+
+  @media screen and (max-width: 768px) {
+    bottom: 0 !important;
+  }
 }
 
 .about-us-slider-image {
@@ -1061,12 +1178,20 @@ a.button:hover {
   margin: 0;
   line-height: 1;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 .about-us-slider-text {
   color: #4a4f61;
   max-width: 720px;
   padding-right: 50px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 /* icons-section */
@@ -1074,6 +1199,10 @@ a.button:hover {
   width: 100%;
   height: 426px;
   object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    height: 300px;
+  }
 }
 
 .icons-section-list {
@@ -1083,6 +1212,11 @@ a.button:hover {
   display: flex;
   flex-direction: column;
   gap: 60px;
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+    font-size: 14px;
+  }
 }
 
 .icons-section-list-item {
@@ -1102,6 +1236,10 @@ a.button:hover {
 /* form-section */
 .form-section {
   padding: 80px 0 160px;
+
+  @media screen and (max-width: 768px) {
+    padding: 60px 0 120px;
+  }
 }
 
 .form-section-title {
@@ -1111,6 +1249,10 @@ a.button:hover {
   line-height: 1;
   font-weight: normal;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .form-section-text {
@@ -1124,6 +1266,10 @@ a.button:hover {
   display: flex;
   align-items: center;
   margin-bottom: 70px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .form-container {
@@ -1134,6 +1280,10 @@ a.button:hover {
   margin-bottom: 30px;
   margin-left: -50px;
   padding: 50px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
 }
 
 .wp-block-contact-form-7-contact-form-selector {
@@ -1222,6 +1372,12 @@ a.button:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .form-info-row a {
@@ -1254,6 +1410,10 @@ a.button:hover {
 
 .form-info-row-item:not(:last-child) {
   border-right: 1px solid rgb(74, 79, 97);
+
+  @media screen and (max-width: 768px) {
+    border-right: none;
+  }
 }
 
 /* Style the submit button */

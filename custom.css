@@ -920,25 +920,39 @@ a.button:hover {
   padding: 50px;
 }
 
+.wp-block-contact-form-7-contact-form-selector {
+  background-color: #f6f6f6;
+  max-width: 668px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 50px;
+}
+
 .form-container textarea[name='your-message'] {
   width: 100%; /* Make it responsive to container */
   height: 120px; /* Set a smaller height */
 }
 
+.wpcf7-form p,
 .form-container p {
   margin-bottom: 0;
 }
 
 .form-container label,
-.form-container label span {
+.form-container label span 
+.wp-block-contact-form-7-contact-form-selector label,
+.wp-block-contact-form-7-contact-form-selector label span {
   max-width: 100%;
   display: block;
 }
 
+.wp-block-contact-form-7-contact-form-selector label,
 .form-container label {
   font-size: 14px;
 }
-
+.wp-block-contact-form-7-contact-form-selector input,
+.wp-block-contact-form-7-contact-form-selector textarea,
 .form-container input,
 .form-container textarea {
   width: 100%; /* Make it responsive */
@@ -949,8 +963,23 @@ a.button:hover {
   border-radius: 0;
 }
 
+.wp-block-contact-form-7-contact-form-selector input:focus,
 .form-container input:focus {
   outline: 1px solid #171717;
+}
+
+.wp-block-contact-form-7-contact-form-selector select,
+.form-container select {
+  width: 100%;
+  border: 1px solid white;
+  background-color: #fff;
+  padding: 8px;
+} 
+
+.wpcf7-form  {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-row {
@@ -1013,6 +1042,7 @@ a.button:hover {
 }
 
 /* Style the submit button */
+.wpcf7-form button,
 .form-container input[type='submit'],
 .form-container button {
   display: flex;
@@ -1221,4 +1251,14 @@ a.button:hover {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.site-main {
+  min-height: 65vh;
+}
+
+.def-page {
+  padding: 140px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }

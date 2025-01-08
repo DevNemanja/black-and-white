@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return; // Exit early if no elements found
   }
 
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3); // Easing function
+
   const startCounting = (counter) => {
     const target = parseInt(counter.textContent.trim(), 10); // Get the target number
     let current = 0; // Start from 0
@@ -15,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const animate = (timestamp) => {
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1); // Progress ratio (0 to 1)
-      current = Math.floor(target * progress); // Calculate current value
+      const easedProgress = easeOutCubic(progress); // Apply easing function
+      current = Math.floor(target * easedProgress); // Calculate current value
       counter.textContent = current; // Update the counter element
 
       if (progress < 1) {
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(counter);
   });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.embroidery-swiper', {

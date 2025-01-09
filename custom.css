@@ -466,6 +466,11 @@ a.button:hover {
   z-index: 110;
   padding-top: 50px;
   padding-bottom: 100px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
 }
 
 .header-logo-link {
@@ -798,6 +803,11 @@ a.button:hover {
   background-position: center;
   background-size: cover;
   transition: background-size 0.2s;
+
+  @media screen and (max-width: 1240px) {
+    min-width: 100%;
+    min-height: 350px;
+  }
 }
 
 .assortment-link-wrapper .overlay {

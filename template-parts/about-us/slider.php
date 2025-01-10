@@ -18,7 +18,7 @@
             <div class="about-us-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class=" about-us-slider-item">
+                        <div class="about-us-slider-item">
                             <div class="about-us-slider-content">
                                 <h3 class="about-us-slider-title"><?php echo $prviSlajdNaslov; ?></h3>
                                 <p class="about-us-slider-text"><?php echo $prviSlajdTekst; ?></p>

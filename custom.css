@@ -1,23 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
 /* General */
 .container {
   max-width: 1920px;
   margin: 0 auto;
   padding-left: 100px;
   padding-right: 100px;
+
+  @media screen and (max-width: 1240px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .title {
   color: #171717;
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: normal;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 32px;
+  }
 }
 
 .description {
   color: #4a4f61;
   font-size: 20px;
   font-weight: normal;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 a.button {
@@ -48,6 +69,10 @@ a.button:hover {
   max-width: 1280px;
   margin: 0 auto;
   padding: 100px 40px 80px;
+
+  @media screen and (max-width: 1240px) {
+    padding: 80px 40px;
+  }
 }
 
 .centered-content-image {
@@ -55,12 +80,21 @@ a.button:hover {
   width: 100%;
   height: 600px;
   object-fit: cover;
+
+  @media screen and (max-width: 1240px) {
+    height: 300px;
+  }
 }
 
 .centered-content-video-wrapper {
   max-width: 1400px;
   height: 600px;
   margin: 0 auto;
+  padding: 0 40px;
+
+  @media screen and (max-width: 1240px) {
+    height: 300px;
+  }
 }
 
 .centered-content-video-wrapper video {
@@ -81,10 +115,18 @@ a.button:hover {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 1240px) {
+    min-height: 600px;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-height: 400px;
+  }
 }
 
 .hero::after {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -117,6 +159,15 @@ a.button:hover {
 .hero-logo {
   z-index: 2;
   max-width: 700px;
+  padding: 0 40px;
+
+  @media screen and (max-width: 1240px) {
+    max-width: 500px;
+  }
+
+  @media screen and (max-width: 1240px) {
+    max-width: 400px;
+  }
 }
 
 .hero-title {
@@ -127,22 +178,39 @@ a.button:hover {
   position: relative;
   z-index: 10;
   text-align: center;
+  padding: 0 20px;
 }
 
 .hero-title h1 {
   margin: 0;
   font-size: 96px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: 400;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 64px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 48px;
+  }
 }
 
 .hero-title p {
   margin: 0;
   font-size: 32px;
-  font-family: 'Inter', serif;
+  font-family: "Inter", serif;
   line-height: 1;
   font-weight: 400;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 1240px) {
+    font-size: 18px;
+  }
 }
 
 /* Counter */
@@ -152,18 +220,40 @@ a.button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 100%
+  );
+
+  @media screen and (max-width: 768px) {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(16, 16, 16, 0) 100%
+    );
+  }
 }
 
 .counter-wrapper {
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .counter-divider {
   width: 1px;
   height: 150px;
   background-color: #cacaca;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 1px;
+    margin: 30px;
+  }
 }
 
 .counter-number-wrapper {
@@ -176,9 +266,13 @@ a.button:hover {
 }
 
 .counter-number {
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
   font-size: 64px;
   color: #171717;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 32px;
+  }
 }
 
 .counter-text {
@@ -186,6 +280,10 @@ a.button:hover {
   font-size: 20px;
   margin: 0;
   min-width: max-content;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 16px;
+  }
 }
 
 /* Homepage social links */
@@ -195,6 +293,10 @@ a.button:hover {
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  @media screen and (max-width: 1240px) {
+    margin: 60px 0;
+  }
 }
 
 .homepage-social .title {
@@ -217,6 +319,10 @@ a.button:hover {
   list-style: none;
   width: 42px;
   transition: opacity 0.3s;
+
+  @media screen and (max-width: 768px) {
+    width: 32px;
+  }
 }
 
 .social-icon:hover {
@@ -231,16 +337,28 @@ a.button:hover {
 .find-us-wrapper {
   display: flex;
   max-width: 100vw;
+
+  @media screen and (max-width: 1240px) {
+    flex-direction: column;
+  }
 }
 
 .find-us-main-image {
   width: 50%;
   object-fit: cover;
+
+  @media screen and (max-width: 1240px) {
+    width: 100%;
+  }
 }
 
 .find-us-info {
   display: flex;
   border-bottom: 1px solid #171717;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .find-us-list {
@@ -285,6 +403,10 @@ a.button:hover {
   width: 50%;
   background-color: #171717;
   color: white;
+
+  @media screen and (max-width: 1240px) {
+    width: 100%;
+  }
 }
 
 .find-us-title {
@@ -295,6 +417,10 @@ a.button:hover {
   margin-top: 36px;
   margin-bottom: 18px;
   margin-right: 8px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
 }
 
 .find-us-phone-list {
@@ -309,6 +435,11 @@ a.button:hover {
   min-width: 340px;
   padding-right: 12px;
   flex: 1;
+
+  @media screen and (max-width: 768px) {
+    padding: 40px;
+    padding-left: 20px;
+  }
 }
 
 .find-us-map {
@@ -332,13 +463,27 @@ a.button:hover {
   width: 100%;
   height: 100px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
-  z-index: 10;
+  z-index: 110;
   padding-top: 50px;
   padding-bottom: 100px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+}
+
+.header-logo-link {
+  display: block;
 }
 
 .header-logo {
   width: 205px;
+  display: block;
+
+  @media screen and (max-width: 1240px) {
+    width: 150px;
+  }
 }
 
 .header {
@@ -351,14 +496,166 @@ a.button:hover {
   font-size: 20px;
 }
 
+.navigation {
+  @media screen and (max-width: 1240px) {
+    transform: translateX(100%);
+    background: rgba(255, 255, 255, 0.92);
+    color: #171717;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 80px;
+    padding-top: 160px;
+    text-align: right;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 768px) {
+    background: rgba(255, 255, 255, 0.98);
+    width: 100%;
+    text-align: center;
+    padding: 140px 20px;
+  }
+}
+
+.navigation::after {
+  @media screen and (max-width: 1240px) {
+    content: "";
+    border: 2px solid #171717;
+    inset: 20px;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.navigation.is-active {
+  transform: translateX(0%);
+}
+
 .header ul {
   margin: 0;
   display: flex;
   gap: 40px;
+
+  @media screen and (max-width: 1240px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
-.header li {
+.mobile-nav-logo {
+  @media screen and (max-width: 1240px) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s;
+    display: block;
+    width: 200px;
+    transition-delay: 0.6s;
+  }
+}
+
+.mobile-nav-addition {
+  display: none;
+
+  @media screen and (max-width: 1240px) {
+    padding-top: 50px;
+    display: block;
+  }
+}
+
+.navigation .social-icons-wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s;
+  transition-delay: 0.7s;
+}
+
+.navigation.is-active .social-icons-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navigation.is-active .mobile-nav-logo {
+  @media screen and (max-width: 1240px) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navigation li {
   list-style: none;
+  position: relative;
+
+  @media screen and (max-width: 1240px) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s;
+  }
+}
+
+.navigation li:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0;
+  left: 0;
+  transition: 0.3s;
+
+  @media screen and (max-width: 1240px) {
+    display: none;
+  }
+}
+
+.navigation li:hover::after {
+  opacity: 1;
+}
+
+/* Stagger effect on smaller screens */
+@media screen and (max-width: 1240px) {
+  .navigation li:nth-child(1) {
+    transition-delay: 0s;
+  }
+
+  .navigation li:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .navigation li:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .navigation li:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+
+  .navigation li:nth-child(5) {
+    transition-delay: 0.4s;
+  }
+
+  .navigation li:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+}
+
+.navigation.is-active li {
+  @media screen and (max-width: 1240px) {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .header a {
@@ -378,6 +675,16 @@ a.button:hover {
   background-color: #171717; /* Example background color */
   color: #fff; /* Example text color */
   padding: 40px 0; /* Add some padding */
+
+  @media screen and (max-width: 1240px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    text-align: center;
+  }
 }
 
 .footer-logo {
@@ -387,6 +694,10 @@ a.button:hover {
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 .footer-logo p {
@@ -396,6 +707,11 @@ a.button:hover {
 .footer-section {
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    align-items: center;
+  }
 }
 
 .footer-section li:first-child {
@@ -462,6 +778,13 @@ a.button:hover {
   margin: 72px auto 100px;
   justify-content: center;
   gap: 34px;
+
+  @media screen and (max-width: 1240px) {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 40px;
+    margin-top: 0;
+  }
 }
 
 .assortment-link {
@@ -479,12 +802,13 @@ a.button:hover {
   align-items: center;
   position: relative;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   transition: background-size 0.2s;
-}
 
-.assortment-link-wrapper:hover {
-  background-size: 102%;
+  @media screen and (max-width: 1240px) {
+    min-width: 100%;
+    min-height: 350px;
+  }
 }
 
 .assortment-link-wrapper .overlay {
@@ -512,7 +836,7 @@ a.button:hover {
 }
 
 .assortment-link-wrapper:hover .assortment-link-title {
-  font-size: 30px;
+  font-size: 29px;
 }
 
 .assortment-link-button {
@@ -545,10 +869,58 @@ a.button:hover {
   object-fit: cover; /* Ensures the image fits perfectly within the specified size */
   margin-bottom: 10px; /* Space between the image and the product name */
   display: block;
+  margin: 0;
 }
 
 .product-image-wrapper {
-  border: 1px solid red;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image-wrapper:hover .product-details {
+  top: 0;
+
+  @media screen and (max-width: 1240px) {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.product-details {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 23, 23, 0.395);
+  color: whitesmoke;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  transition: all 0.3s;
+  font-size: 14px;
+
+  @media screen and (max-width: 1240px) {
+    position: fixed;
+    height: auto;
+    background-color: rgba(23, 23, 23, 0.8);
+  }
+}
+
+.product-details p {
+  margin: 0;
+}
+
+.product-title {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 600;
+
+  @media screen and (max-width: 1240px) {
+    font-size: 16px;
+  }
 }
 
 .products-grid {
@@ -558,6 +930,17 @@ a.button:hover {
   justify-content: center; /* Center the grid within the container if necessary */
   padding: 20px; /* Optional padding for spacing around the grid */
   margin-top: 40px;
+
+  @media screen and (max-width: 1240px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0;
+  }
 }
 
 .product-name {
@@ -645,7 +1028,11 @@ a.button:hover {
 /* overlapping images section */
 .embroidery-section {
   padding-top: 100px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 25%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 25%
+  );
 }
 
 .embroidery-text-above-title {
@@ -655,22 +1042,35 @@ a.button:hover {
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    letter-spacing: 40%;
+  }
 }
 
 .embroidery-title {
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
   line-height: 1;
   margin-bottom: 60px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .overlapping-wrapper {
   display: flex;
   align-items: start;
   gap: 10%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .overlapping-images {
@@ -696,12 +1096,16 @@ a.button:hover {
 
 .overlapping-content-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
   line-height: 1;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .overlapping-content {
@@ -715,21 +1119,39 @@ a.button:hover {
 
 .overlapping-icon-list-item {
   font-size: 22px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.overlapping-icon-list-item svg {
+  @media screen and (max-width: 768px) {
+    width: 35px;
+  }
 }
 
 /* Embroidery slider section */
 .embroidery-slider {
   margin-top: 100px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 80px;
+  }
 }
 
 .embroidery-slider-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
   line-height: 1;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .embroidery-slider-text {
@@ -746,6 +1168,10 @@ a.button:hover {
   max-width: 100%;
   margin-bottom: 200px;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 100px;
+  }
 }
 
 .swiper-button-next {
@@ -767,12 +1193,14 @@ a.button:hover {
   bottom: 0;
 }
 
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet {
   background: #fff;
   border: 1px solid #171717;
   opacity: 1;
 }
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet-active {
   background: #171717;
 }
 
@@ -781,6 +1209,10 @@ a.button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .about-us-slider {
@@ -797,6 +1229,10 @@ a.button:hover {
   display: flex;
   justify-content: start;
   bottom: 45px !important;
+
+  @media screen and (max-width: 768px) {
+    bottom: 0 !important;
+  }
 }
 
 .about-us-slider-image {
@@ -806,18 +1242,26 @@ a.button:hover {
 
 .about-us-slider-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
   line-height: 1;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 .about-us-slider-text {
   color: #4a4f61;
   max-width: 720px;
   padding-right: 50px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 /* icons-section */
@@ -825,6 +1269,10 @@ a.button:hover {
   width: 100%;
   height: 426px;
   object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    height: 300px;
+  }
 }
 
 .icons-section-list {
@@ -834,6 +1282,11 @@ a.button:hover {
   display: flex;
   flex-direction: column;
   gap: 60px;
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+    font-size: 14px;
+  }
 }
 
 .icons-section-list-item {
@@ -853,15 +1306,23 @@ a.button:hover {
 /* form-section */
 .form-section {
   padding: 80px 0 160px;
+
+  @media screen and (max-width: 768px) {
+    padding: 60px 0 120px;
+  }
 }
 
 .form-section-title {
   color: #171717;
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: normal;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .form-section-text {
@@ -875,6 +1336,15 @@ a.button:hover {
   display: flex;
   align-items: center;
   margin-bottom: 70px;
+
+  @media screen and (max-width: 1240px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    max-width: 100%;
+  }
 }
 
 .form-container {
@@ -885,27 +1355,50 @@ a.button:hover {
   margin-bottom: 30px;
   margin-left: -50px;
   padding: 50px;
+
+  @media screen and (max-width: 1240px) {
+    margin-left: 0;
+    margin-top: -200px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 30px;
+    max-width: 100%;
+  }
 }
 
-.form-container textarea[name='your-message'] {
+.wp-block-contact-form-7-contact-form-selector {
+  background-color: #f6f6f6;
+  max-width: 668px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 50px;
+}
+
+.form-container textarea[name="your-message"] {
   width: 100%; /* Make it responsive to container */
   height: 120px; /* Set a smaller height */
 }
 
+.wpcf7-form p,
 .form-container p {
   margin-bottom: 0;
 }
 
 .form-container label,
-.form-container label span {
+.form-container label span .wp-block-contact-form-7-contact-form-selector label,
+.wp-block-contact-form-7-contact-form-selector label span {
   max-width: 100%;
   display: block;
 }
 
+.wp-block-contact-form-7-contact-form-selector label,
 .form-container label {
   font-size: 14px;
 }
-
+.wp-block-contact-form-7-contact-form-selector input,
+.wp-block-contact-form-7-contact-form-selector textarea,
 .form-container input,
 .form-container textarea {
   width: 100%; /* Make it responsive */
@@ -916,17 +1409,40 @@ a.button:hover {
   border-radius: 0;
 }
 
+.wp-block-contact-form-7-contact-form-selector input:focus,
 .form-container input:focus {
   outline: 1px solid #171717;
+}
+
+.wp-block-contact-form-7-contact-form-selector select,
+.form-container select {
+  width: 100%;
+  border: 1px solid white;
+  background-color: #fff;
+  padding: 8px;
+}
+
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-row {
   display: flex;
   gap: 12px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .form-row p {
   max-width: 50%;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 
 .form-image {
@@ -945,6 +1461,12 @@ a.button:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .form-info-row a {
@@ -962,6 +1484,7 @@ a.button:hover {
   font-weight: 300;
   display: flex;
   gap: 20px;
+  padding-right: 16px;
 }
 
 .form-info-row-icon {
@@ -977,10 +1500,15 @@ a.button:hover {
 
 .form-info-row-item:not(:last-child) {
   border-right: 1px solid rgb(74, 79, 97);
+
+  @media screen and (max-width: 768px) {
+    border-right: none;
+  }
 }
 
 /* Style the submit button */
-.form-container input[type='submit'],
+.wpcf7-form button,
+.form-container input[type="submit"],
 .form-container button {
   display: flex;
   align-items: center;
@@ -998,7 +1526,7 @@ a.button:hover {
 }
 
 .form-container button::after {
-  content: '';
+  content: "";
   width: 10px;
   height: 10px;
   display: block;
@@ -1035,7 +1563,7 @@ a.button:hover {
   font-weight: 400;
   text-transform: uppercase;
   color: #171717;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   margin: 0;
   margin-bottom: 16px;
   line-height: 1.2;
@@ -1188,4 +1716,75 @@ a.button:hover {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.site-main {
+  min-height: 65vh;
+}
+
+.def-page {
+  padding: 140px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* hamburger */
+.hamburger {
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+  transform: scale(0.4) translateX(40px);
+  display: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  @media screen and (max-width: 1240px) {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.hamburger.is-active {
+  z-index: 101;
+}
+
+.hamburger span {
+  background: #fff;
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.hamburger span:nth-of-type(1) {
+  width: 50%;
+}
+
+.hamburger span:nth-of-type(2) {
+  width: 100%;
+}
+
+.hamburger span:nth-of-type(3) {
+  width: 75%;
+}
+
+.hamburger.is-active span {
+  background: #171717;
+}
+
+.hamburger.is-active span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(8px, 0px);
+}
+
+.hamburger.is-active span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+.hamburger.is-active span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(30px, -11px) rotatez(45deg);
 }

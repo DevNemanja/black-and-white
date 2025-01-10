@@ -42,34 +42,15 @@ get_header(); ?>
                 <?php if (have_posts()) : ?>
                 <div class="products-grid">
                         <?php while (have_posts()) : the_post(); ?>
-                            <div class="product-item">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <div class="product-image-wrapper">
+                            <div class="product-card">
+                                <a href="<?php the_permalink(); ?>" class="product-link">
+                                    <?php if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="product-image">
-                                    </div>
-                                <?php endif; ?>
-                                    
-                                <?php if (get_locale() === 'sr_RS') : // Provera za srpski jezik ?>
-                                    <h2 class="product-title"><?php the_title(); ?></h2>
-                                    <div class="product-details">
-                                        <p><strong><?php _e('Sirovinski sastav', 'your-text-domain'); ?>:</strong> 
-                                            <?php echo esc_html(get_field('sirovinski_sastav')); ?>
-                                        </p>
-                                        <p><strong><?php _e('Širina', 'your-text-domain'); ?>:</strong> 
-                                            <?php echo esc_html(get_field('sirina')); ?> cm
-                                        </p>
-                                        <p><strong><?php _e('Težina', 'your-text-domain'); ?>:</strong> 
-                                            <?php echo esc_html(get_field('tezina')); ?> kg
-                                        </p>
-                                    </div>
-                                <?php else : // Za sve ostale jezike, npr. engleski ?>
-                                    <div class="product-details">
-                                        <p>ENG</p>
-                                    </div>
-                                <?php endif; ?>
-
-
-
+                                    <?php else : ?>
+                                        <img src="<?php echo esc_url(woocommerce_placeholder_img_src()); ?>" alt="Placeholder" class="product-image">
+                                    <?php endif; ?>
+                                    <h2 class="product-name"><?php the_title(); ?></h2>
+                                </a>
                             </div>
                         <?php endwhile; ?>
                     </div>

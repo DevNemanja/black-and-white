@@ -38,9 +38,18 @@
             <h3 class="form-info-title"><?php echo $naslovVeleprodaja; ?></h3>
 
             <?php 
+
+                    $locale = get_locale(); // Get the current locale
+
+                    if ($locale === 'sr_RS') {
+                        $monFriHrs = get_theme_mod('wholesale_working_hours_mon_fri');
+                        $satHrs = get_theme_mod('wholesale_working_hours_sat');
+                    } else {
+                        $monFriHrs = get_theme_mod('wholesale_working_hours_mon_fri_eng');
+                        $satHrs = get_theme_mod('wholesale_working_hours_sat_eng');
+                    }
+
                     $location = get_theme_mod('wholesale_address');
-                    $monFriHrs = get_theme_mod('wholesale_working_hours_mon_fri');
-                    $satHrs = get_theme_mod('wholesale_working_hours_sat');
                     $mail = get_theme_mod('wholesale_email');
 
                     $phone_numbers = [
@@ -68,9 +77,15 @@
             <h3 class="form-info-title"><?php echo $naslovMaloprodaja; ?></h3>
 
             <?php 
+                if ($locale === 'sr_RS') {
+                    $monFriHrs = get_theme_mod('retail_working_hours_mon_fri');
+                    $satHrs = get_theme_mod('retail_working_hours_sat');
+                } else {
+                    $monFriHrs = get_theme_mod('retail_working_hours_mon_fri_eng');
+                    $satHrs = get_theme_mod('retail_working_hours_sat_eng');
+                }
+
                 $location = get_theme_mod('retail_address');
-                $monFriHrs = get_theme_mod('retail_working_hours_mon_fri');
-                $satHrs = get_theme_mod('retail_working_hours_sat');
                 $mail = get_theme_mod('retail_email');
 
                 $phone_numbers = [

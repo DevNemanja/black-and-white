@@ -41,12 +41,32 @@ function mytheme_customize_register($wp_customize) {
         'type'       => 'text',
     ));
 
+    $wp_customize->add_setting('wholesale_working_hours_mon_fri_eng', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('wholesale_working_hours_mon_fri_eng', array(
+        'label'      => __('Wholesale Working Hours (Mon-Fri) - eng', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
     $wp_customize->add_setting('wholesale_working_hours_sat', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('wholesale_working_hours_sat', array(
         'label'      => __('Wholesale Working Hours (Sat)', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('wholesale_working_hours_sat eng', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('wholesale_working_hours_sat eng', array(
+        'label'      => __('Wholesale Working Hours (Sat) - eng', 'mytheme'),
         'section'    => 'store_info_section',
         'type'       => 'text',
     ));
@@ -91,6 +111,15 @@ function mytheme_customize_register($wp_customize) {
         'section'    => 'store_info_section',
         'type'       => 'text',
     ));
+    $wp_customize->add_setting('retail_working_hours_mon_fri_eng', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('retail_working_hours_mon_fri_eng', array(
+        'label'      => __('Retail Working Hours (Mon-Fri) - eng', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
 
     $wp_customize->add_setting('retail_working_hours_sat', array(
         'default'   => '',
@@ -98,6 +127,16 @@ function mytheme_customize_register($wp_customize) {
     ));
     $wp_customize->add_control('retail_working_hours_sat', array(
         'label'      => __('Retail Working Hours (Sat)', 'mytheme'),
+        'section'    => 'store_info_section',
+        'type'       => 'text',
+    ));
+
+    $wp_customize->add_setting('retail_working_hours_sat_eng', array(
+        'default'   => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('retail_working_hours_sat_eng', array(
+        'label'      => __('Retail Working Hours (Sat) - eng', 'mytheme'),
         'section'    => 'store_info_section',
         'type'       => 'text',
     ));

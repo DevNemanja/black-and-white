@@ -1,60 +1,16 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package black-and-white
- */
+// Proveravamo da li je aktiviran WPML ili Polylang za višejezičnost
+if (function_exists('pll_home_url')) {
+    // Koristimo Polylang funkciju za dobijanje početne stranice za trenutni jezik
+    $home_url = pll_home_url();
+} elseif (function_exists('icl_get_home_url')) {
+    // Koristimo WPML funkciju za dobijanje početne stranice za trenutni jezik
+    $home_url = icl_get_home_url();
+} else {
+    // Ako nema višejezičnih dodataka, koristimo standardnu WordPress funkciju
+    $home_url = home_url('/');
+}
 
-get_header();
-?>
-
-	<main id="primary" class="site-main">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'black-and-white' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'black-and-white' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'black-and-white' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$black_and_white_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'black-and-white' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$black_and_white_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
-
-<?php
-get_footer();
+// Preusmeravamo korisnika na početnu stranicu
+wp_redirect($home_url);
+exit;

@@ -8,7 +8,7 @@ $sub = get_field('subotom');
 
 <section>
     <div class="find-us-wrapper">
-        <img class="find-us-main-image" src="<?php echo $slika_levo; ?>" alt="<?php echo $title; ?>">
+        
         <div class="find-us-info-wrapper">
 
             <?php

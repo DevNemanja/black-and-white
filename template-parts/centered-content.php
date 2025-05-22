@@ -1,5 +1,5 @@
 <section class="centered-content-section">
-    <div class="centered-content">
+    <div class="centered-content <?php if ($noTopMargin) echo 'no-top-margin' ?>">
         <?php if (!empty($title)) : ?>
             <h2 class="title"><?php echo $title; ?></h2>
         <?php endif; ?>
@@ -22,12 +22,12 @@
                 <source src="<?php echo esc_url($video); ?>" type="video/mp4" />
             </video>
         </div>
-        
+
     <?php endif; ?>
 
 
 
-    <?php if (!empty($slika) AND empty($video)) : ?>
+    <?php if (!empty($slika) and empty($video)) : ?>
         <img class="centered-content-image" src="<?php echo $slika; ?>" alt="<?php echo !empty($title) ? $title : ''; ?>">
     <?php endif; ?>
 </section>

@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.embroidery-swiper', {
     loop: true, // Enable looping
@@ -81,20 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     loop: true, // Enables infinite loop
     autoplay: {
-      delay: 3000, // Delay between slides
+      delay: 7000, // Delay between slides
     },
+    speed: 1000,
   });
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
   var hamburger = document.querySelector('.hamburger');
   var nav = document.querySelector('.navigation');
 
-  
-  hamburger.addEventListener('click', function() {
+  hamburger.addEventListener('click', function () {
     hamburger.classList.toggle('is-active');
     nav.classList.toggle('is-active');
   });
 });
-

@@ -1,9 +1,11 @@
-<?php 
-    $title = get_field('o_nama_naslov'); 
-    $text = get_field('o_nama_tekst');
-    $buttonText = get_field('o_nama_dugme_tekst');
-    $buttonLink = get_field('o_nama_dugme_link');
-    $slika = get_field('o_nama_slika');
-    $video = get_field('o_nama_video');
+<?php
+$title = get_field('o_nama_naslov');
+$text = get_field('o_nama_tekst');
+$buttonText = get_field('o_nama_dugme_tekst');
+$buttonLink = get_field('o_nama_dugme_link');
+$slika = get_field('o_nama_slika');
+$video = get_field('o_nama_video');
+$noTopMargin = true;
 
-    require(get_template_directory() . '/template-parts/centered-content.php'); 
+require(get_template_directory() . '/template-parts/centered-content.php');
+$noTopMargin = false;

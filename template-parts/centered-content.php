@@ -1,5 +1,5 @@
 <section class="centered-content-section">
-    <div class="centered-content <?php if ($noTopMargin) echo 'no-top-margin' ?>">
+    <div class="centered-content <?php if (isset($noTopMargin) && $noTopMargin) echo 'no-top-margin' ?>">
         <?php if (!empty($title)) : ?>
             <h2 class="title"><?php echo $title; ?></h2>
         <?php endif; ?>

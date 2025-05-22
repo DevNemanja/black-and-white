@@ -80,7 +80,7 @@ get_header(); ?>
 
                                                         <?php if ($tezina) : ?>
                                                             <p><strong><?php _e('Težina', 'your-text-domain'); ?>:</strong> 
-                                                                <?php echo esc_html($tezina); ?> kg
+                                                                <?php echo esc_html($tezina); ?> gr/m²
                                                             </p>
                                                         <?php endif; ?>
                                                     </div>
@@ -95,7 +95,7 @@ get_header(); ?>
                                                     if ($sirovinski_sastav_eng || $sirina || $tezina) : ?>
                                                     <div class="product-details">
                                                         <?php if ($sirovinski_sastav_eng) : ?>
-                                                            <p><strong><?php _e('Composition', 'your-text-domain'); ?>:</strong> 
+                                                            <p><stroform-info-dividerng><?php _e('Composition', 'your-text-domain'); ?>:</stroform-info-dividerng> 
                                                                 <?php echo esc_html($sirovinski_sastav_eng); ?>
                                                             </p>
                                                         <?php endif; ?>
@@ -108,7 +108,7 @@ get_header(); ?>
 
                                                         <?php if ($tezina) : ?>
                                                             <p><strong><?php _e('Weight', 'your-text-domain'); ?>:</strong> 
-                                                                <?php echo esc_html($tezina); ?> kg
+                                                                <?php echo esc_html($tezina); ?> gsm 
                                                             </p>
                                                         <?php endif; ?>
                                                     </div>

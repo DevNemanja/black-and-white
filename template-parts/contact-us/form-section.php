@@ -71,39 +71,6 @@
             
                 require('form-info-row.php'); 
             ?>
-        </div>  
-        <div class="form-info-divider"></div>
-        <div>
-            <h3 class="form-info-title"><?php echo $naslovMaloprodaja; ?></h3>
-
-            <?php 
-                if ($locale === 'sr_RS') {
-                    $monFriHrs = get_theme_mod('retail_working_hours_mon_fri');
-                    $satHrs = get_theme_mod('retail_working_hours_sat');
-                } else {
-                    $monFriHrs = get_theme_mod('retail_working_hours_mon_fri_eng');
-                    $satHrs = get_theme_mod('retail_working_hours_sat_eng');
-                }
-
-                $location = get_theme_mod('retail_address');
-                $mail = get_theme_mod('retail_email');
-
-                $phone_numbers = [
-                    get_theme_mod('retail_phone_number')
-                ];
-
-                // Filter out empty numbers
-                $phone_links = array_filter($phone_numbers, function ($number) {
-                    return !empty($number);
-                });
-
-                $phone = '';
-                foreach ($phone_links as $number) {
-                    $phone .= '<li><a href="tel:' . esc_attr($number) . '">' . esc_html($number) . '</a></li>';
-                }
-            
-                require('form-info-row.php'); 
-            ?>
-        </div>  
+        </div>   
     </div>
 </section>

@@ -138,6 +138,8 @@ get_header(); ?>
                     <?php 
                     echo paginate_links(array(
                         'total' => $query->max_num_pages,
+                        'prev_text' => '«',
+                        'next_text' => '»',
                     ));
                     ?>
                 </div>

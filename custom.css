@@ -955,13 +955,13 @@ a.button:hover {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 55px;
   justify-content: center; /* Center the grid within the container if necessary */
   padding: 20px; /* Optional padding for spacing around the grid */
   margin-top: 40px;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1440px) {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 0;
@@ -1575,12 +1575,6 @@ a.button:hover {
   padding-bottom: 120px;
 }
 
-.single-product-breadcrumbs-wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
-}
-
 .single-product-gallery-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1589,7 +1583,7 @@ a.button:hover {
 }
 
 .single-product-gallery-section h1 {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 400;
   text-transform: uppercase;
   color: #171717;
@@ -1599,25 +1593,27 @@ a.button:hover {
   line-height: 1.2;
 }
 
-.single-product-main-image .swiper-slide {
+.single-product-main-image .swiper-slide > div {
   overflow: hidden;
 }
 
 .single-product-main-image .swiper-slide img {
+  display: block;
   transition: 0.2s;
   transform-origin: center center;
 }
 
 .single-product-content {
-  font-size: 14px;
+  font-size: 16px;
   color: #4a4f61;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 .single-product-gallery-slider {
   display: flex;
   gap: 12px;
-  width: 815px;
-  height: 736px;
+  max-height: 450px;
 }
 
 .single-product-gallery .single-product-main-image {
@@ -1630,7 +1626,11 @@ a.button:hover {
   flex-direction: column;
   gap: 6px;
   width: 72px;
-  height: 736px;
+  height: 72px;
+}
+
+.single-product-images .swiper-wrapper {
+  flex-direction: column;
 }
 
 .single-product-main-image {
@@ -1669,6 +1669,17 @@ a.button:hover {
   flex-basis: 50%;
 }
 
+.single-product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.single-product-details p {
+  margin: 0;
+}
+
 .single-product-details-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1688,8 +1699,9 @@ a.button:hover {
 
 .single-product-upsells h2 {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 26px;
   margin-bottom: 32px;
+  font-family: "Marcellus", serif;
   text-transform: uppercase;
   color: #171717;
 }
@@ -1709,13 +1721,15 @@ a.button:hover {
 }
 
 .single-product-upsell-products img {
-  max-width: 170px;
+  max-width: 230px;
+  display: block;
 }
 
 .single-product-upsell-products h3 {
   color: #171717;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: 500;
   text-transform: uppercase;
 }
 

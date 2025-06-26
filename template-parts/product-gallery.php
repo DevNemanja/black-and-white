@@ -38,7 +38,9 @@
 
                 // Output the image
                 echo '<div class="swiper-slide">';
+                echo '<div>';
                 echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $image_alt ) . '" />';
+                echo '</div>';
                 echo '</div>';
             }
             echo '</div>';
@@ -55,7 +57,9 @@
 
                 // Output the image
                 echo '<div class="swiper-slide">';
+                echo '<div>';
                 echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $image_alt ) . '" />';
+                echo '</div>';
                 echo '</div>';
             }
             echo '</div>';

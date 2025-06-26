@@ -948,6 +948,11 @@ a.button:hover {
   }
 }
 
+.product-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -1592,6 +1597,15 @@ a.button:hover {
   margin: 0;
   margin-bottom: 16px;
   line-height: 1.2;
+}
+
+.single-product-main-image .swiper-slide {
+  overflow: hidden;
+}
+
+.single-product-main-image .swiper-slide img {
+  transition: 0.2s;
+  transform-origin: center center;
 }
 
 .single-product-content {

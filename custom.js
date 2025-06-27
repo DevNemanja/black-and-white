@@ -101,8 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.single-product-main-image .swiper-slide img');
   const sliderImages = document.querySelectorAll('.single-product-swiper .swiper-slide img');
 
-  console.log(images);
-
   images.forEach((img) => {
     img.addEventListener('mousemove', (e) => {
       const rect = img.getBoundingClientRect();
@@ -138,6 +136,28 @@ document.addEventListener('DOMContentLoaded', () => {
     img.addEventListener('mouseleave', () => {
       img.style.transformOrigin = 'center center';
       img.style.transform = 'scale(1)';
+    });
+  });
+
+  var swiper = new Swiper('.single-product-swiper', {
+    loop: true,
+
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+
+  document.querySelectorAll('.single-product-swiper-pagination .thumb').forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      swiper.slideToLoop(index);
+      document.querySelectorAll('.thumb').forEach((t) => t.classList.remove('active'));
+      thumb.classList.add('active');
     });
   });
 });

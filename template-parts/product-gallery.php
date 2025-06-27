@@ -14,17 +14,17 @@ if (class_exists('WooCommerce')) {
 <div class="<?php echo esc_attr($containerClass); ?>">
     <?php if (!empty($gallery_image_ids)) : ?>
         <!-- Thumbnail Pagination Swiper -->
-        <div class="swiper single-product-swiper-pagination">
-            <div class="swiper-wrapper">
-                <?php foreach ($gallery_image_ids as $image_id) :
-                    $image_url = wp_get_attachment_image_url($image_id, 'thumbnail');
-                    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Thumbnail';
-                ?>
-                    <div class="swiper-slide">
-                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
-                    </div>
-                <?php endforeach; ?>
-            </div>
+        <div class="single-product-swiper-pagination">
+
+            <?php foreach ($gallery_image_ids as $image_id) :
+                $image_url = wp_get_attachment_image_url($image_id, 'thumbnail');
+                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Thumbnail';
+            ?>
+                <div class="thumb">
+                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
+                </div>
+            <?php endforeach; ?>
+
         </div>
 
         <!-- Main Image Swiper -->
@@ -53,30 +53,73 @@ if (class_exists('WooCommerce')) {
     <?php endif; ?>
 </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
+<style>
+    .single-product-swiper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
-        var swiper = new Swiper(".single-product-swiper-pagination", {
-            loop: true,
-            spaceBetween: 10,
-            slidesPerView: 4.5,
-            freeMode: true,
-            watchSlidesProgress: true,
-            direction: "vertical",
-        });
+    .single-product-swiper-pagination {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 12px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        /* za Firefox */
+    }
 
-        var swiper2 = new Swiper(".single-product-swiper", {
-            loop: true,
+    .single-product-swiper-pagination .thumb {
+        flex: 0 0 auto;
+        width: 100px;
+        height: 100px;
+    }
 
-            spaceBetween: 10,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+    .single-product-swiper-pagination .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 
-            thumbs: {
-                swiper: swiper,
-            },
-        });
-    });
-</script>
+    /* Responsive ponašanje za max-width: 1240px */
+    @media screen and (max-width: 1240px) {
+        .single-product-swiper-pagination {
+            width: 100%;
+            min-height: 100px;
+            max-height: 100px;
+            flex-direction: row;
+        }
+    }
+
+    .single-product-swiper-pagination .swiper-slide {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+
+    .single-product-swiper-pagination .swiper-slide:hover {
+        opacity: 1;
+    }
+
+    .single-product-swiper-pagination .swiper-slide.custom-active {
+        opacity: 1;
+    }
+
+    .single-product-swiper .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+    }
+
+    .single-product-swiper-pagination .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+    }
+</style>

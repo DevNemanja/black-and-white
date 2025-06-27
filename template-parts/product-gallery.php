@@ -1,9 +1,9 @@
 <?php
-if ( class_exists( 'WooCommerce' ) ) {
+if (class_exists('WooCommerce')) {
     global $post;
-    $product = wc_get_product( $post->ID );
+    $product = wc_get_product($post->ID);
 
-    if ( $product instanceof WC_Product ) {
+    if ($product instanceof WC_Product) {
         $gallery_image_ids = $product->get_gallery_image_ids();
         $featured_image_id = $product->get_image_id();
         $containerClass = !empty($gallery_image_ids) ? 'single-product-gallery-slider' : 'single-product-gallery';
@@ -16,7 +16,7 @@ if ( class_exists( 'WooCommerce' ) ) {
         <!-- Thumbnail Pagination Swiper -->
         <div class="swiper single-product-swiper-pagination">
             <div class="swiper-wrapper">
-                <?php foreach ($gallery_image_ids as $image_id) : 
+                <?php foreach ($gallery_image_ids as $image_id) :
                     $image_url = wp_get_attachment_image_url($image_id, 'thumbnail');
                     $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Thumbnail';
                 ?>
@@ -30,7 +30,7 @@ if ( class_exists( 'WooCommerce' ) ) {
         <!-- Main Image Swiper -->
         <div class="swiper single-product-swiper">
             <div class="swiper-wrapper">
-                <?php foreach ($gallery_image_ids as $image_id) : 
+                <?php foreach ($gallery_image_ids as $image_id) :
                     $image_url = wp_get_attachment_image_url($image_id, 'full');
                     $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Image';
                 ?>
@@ -56,27 +56,27 @@ if ( class_exists( 'WooCommerce' ) ) {
 <script>
     document.addEventListener("DOMContentLoaded", () => {
 
-    var swiper = new Swiper(".single-product-swiper", {
-      loop: true,
-      spaceBetween: 10,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
-      direction: "vertical",
-    });
+        var swiper = new Swiper(".single-product-swiper-pagination", {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 4.5,
+            freeMode: true,
+            watchSlidesProgress: true,
+            direction: "vertical",
+        });
 
-    var swiper2 = new Swiper(".single-product-swiper-pagination", {
-      loop: true,
-       
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+        var swiper2 = new Swiper(".single-product-swiper", {
+            loop: true,
 
-      thumbs: {
-        swiper: swiper,
-      },
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            thumbs: {
+                swiper: swiper,
+            },
+        });
     });
-});
 </script>

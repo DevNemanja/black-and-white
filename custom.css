@@ -1577,7 +1577,7 @@ a.button:hover {
 
 .single-product-gallery-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 50vw 1fr;
   gap: 55px;
   margin-bottom: 60px;
 }
@@ -1668,8 +1668,7 @@ a.button:hover {
 .single-product-content-wrapper {
   flex-basis: 50%;
 }
-
-.single-product-details {
+*/ .single-product-details {
   display: flex;
   flex-direction: column;
   gap: 8px;

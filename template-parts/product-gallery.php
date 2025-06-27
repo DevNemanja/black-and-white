@@ -1,81 +1,82 @@
 <?php
-    if ( class_exists( 'WooCommerce' ) ) {
-        // Get the global post object (for the current product page)
-        global $post;
+if ( class_exists( 'WooCommerce' ) ) {
+    global $post;
+    $product = wc_get_product( $post->ID );
 
-        // Create the WooCommerce product object from the post
-        $product = wc_get_product( $post->ID );
-
-        if ( $product instanceof WC_Product ) {
-            // Get gallery image IDs
-            $gallery_image_ids = $product->get_gallery_image_ids();
-        }
-
-        $containerClass;
-        if ( ! empty( $gallery_image_ids ) ) {
-            $containerClass = 'single-product-gallery-slider';
-        } else {
-            $containerClass = 'single-product-gallery';
-        }
-
+    if ( $product instanceof WC_Product ) {
+        $gallery_image_ids = $product->get_gallery_image_ids();
+        $featured_image_id = $product->get_image_id();
+        $containerClass = !empty($gallery_image_ids) ? 'single-product-gallery-slider' : 'single-product-gallery';
     }
+}
 ?>
 
-<div class="<?php echo $containerClass; ?>">
-    <?php
-    // Ensure WooCommerce is active
-    if ( class_exists( 'WooCommerce' ) ) {
-        if ( ! empty( $gallery_image_ids ) ) {
-            // If gallery images exist, show the sliders
-            echo '<div class="single-product-images single-product-swiper-pagination">';
-            echo '<div class="swiper-wrapper">';
-            foreach ( $gallery_image_ids as $image_id ) {
-                // Get the image URL
-                $image_url = wp_get_attachment_image_url( $image_id, 'full' );
+<div class="<?php echo esc_attr($containerClass); ?>">
+    <?php if (!empty($gallery_image_ids)) : ?>
+        <!-- Thumbnail Pagination Swiper -->
+        <div class="swiper single-product-swiper-pagination">
+            <div class="swiper-wrapper">
+                <?php foreach ($gallery_image_ids as $image_id) : 
+                    $image_url = wp_get_attachment_image_url($image_id, 'thumbnail');
+                    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Thumbnail';
+                ?>
+                    <div class="swiper-slide">
+                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
 
-                // Get the image alt text
-                $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ?: 'Product Gallery Image';
-
-                // Output the image
-                echo '<div class="swiper-slide">';
-                echo '<div>';
-                echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $image_alt ) . '" />';
-                echo '</div>';
-                echo '</div>';
-            }
-            echo '</div>';
-            echo '</div>';
-
-            echo '<div class="single-product-main-image single-product-swiper">';
-            echo '<div class="swiper-wrapper">';
-            foreach ( $gallery_image_ids as $image_id ) {
-                // Get the image URL
-                $image_url = wp_get_attachment_image_url( $image_id, 'full' );
-
-                // Get the image alt text
-                $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ?: 'Product Gallery Image';
-
-                // Output the image
-                echo '<div class="swiper-slide">';
-                echo '<div>';
-                echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $image_alt ) . '" />';
-                echo '</div>';
-                echo '</div>';
-            }
-            echo '</div>';
-            echo '</div>';
-        } else {
-            // If no gallery images, show only the featured image
-            $featured_image_id = $product->get_image_id();
-            if ( $featured_image_id ) {
-                $featured_image_url = wp_get_attachment_image_url( $featured_image_id, 'full' );
-                $featured_image_alt = get_post_meta( $featured_image_id, '_wp_attachment_image_alt', true ) ?: 'Featured Product Image';
-
-                echo '<div class="single-product-main-image">';
-                echo '<img src="' . esc_url( $featured_image_url ) . '" alt="' . esc_attr( $featured_image_alt ) . '" />';
-                echo '</div>';
-            }
-        }
-    }
-    ?>
+        <!-- Main Image Swiper -->
+        <div class="swiper single-product-swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($gallery_image_ids as $image_id) : 
+                    $image_url = wp_get_attachment_image_url($image_id, 'full');
+                    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Image';
+                ?>
+                    <div class="swiper-slide">
+                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php else : ?>
+        <!-- Just the Featured Image -->
+        <?php if ($featured_image_id) :
+            $featured_image_url = wp_get_attachment_image_url($featured_image_id, 'full');
+            $featured_image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true) ?: 'Featured Image';
+        ?>
+            <div class="single-product-main-image">
+                <img src="<?php echo esc_url($featured_image_url); ?>" alt="<?php echo esc_attr($featured_image_alt); ?>" />
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+    var swiper = new Swiper(".single-product-swiper", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+      direction: "vertical",
+    });
+
+    var swiper2 = new Swiper(".single-product-swiper-pagination", {
+      loop: true,
+       
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+});
+</script>

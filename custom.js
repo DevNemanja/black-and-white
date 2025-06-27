@@ -119,3 +119,25 @@ images.forEach((img) => {
     img.style.transform = "scale(1)";
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // const thumbSwiper = new Swiper(".single-product-swiper-pagination", {
+  //   spaceBetween: 10,
+  //   slidesPerView: 3,
+  //   breakpoints: {
+  //     768: {
+  //       slidesPerView: 5,
+  //     },
+  //   },
+  // });
+  // const mainSwiper = new Swiper(".single-product-swiper", {
+  //   spaceBetween: 10,
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  //   thumbs: {
+  //     swiper: thumbSwiper,
+  //   },
+  // });
+});

@@ -20,7 +20,7 @@ if (class_exists('WooCommerce')) {
                 $image_url = wp_get_attachment_image_url($image_id, 'thumbnail');
                 $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Thumbnail';
             ?>
-                <div class="thumb">
+                <div class="thumb<?php echo ($image_id === reset($gallery_image_ids)) ? ' active' : ''; ?>">
                     <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
                 </div>
             <?php endforeach; ?>
@@ -74,6 +74,12 @@ if (class_exists('WooCommerce')) {
         flex: 0 0 auto;
         width: 100px;
         height: 100px;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+    }
+
+    .single-product-swiper-pagination .thumb.active {
+        opacity: 1;
     }
 
     .single-product-swiper-pagination .thumb img {
@@ -83,8 +89,8 @@ if (class_exists('WooCommerce')) {
         display: block;
     }
 
-    /* Responsive ponašanje za max-width: 1240px */
-    @media screen and (max-width: 1240px) {
+    /* Responsive ponašanje za max-width: 900px */
+    @media screen and (max-width: 900px) {
         .single-product-swiper-pagination {
             width: 100%;
             min-height: 100px;

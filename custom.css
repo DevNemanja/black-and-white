@@ -1572,7 +1572,7 @@ a.button:hover {
   gap: 55px;
   margin-bottom: 60px;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 900px) {
     display: block;
   }
 }
@@ -1610,7 +1610,7 @@ a.button:hover {
   gap: 12px;
   max-height: 450px;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column-reverse;
     max-height: 100%;
   }
@@ -1668,7 +1668,7 @@ a.button:hover {
 .single-product-content-wrapper {
   flex-basis: 50%;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 900px) {
     margin-top: 32px;
   }
 }

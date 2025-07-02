@@ -900,7 +900,6 @@ a.button:hover {
 .product-image-wrapper {
   position: relative;
   overflow: hidden;
-  width: 170px;
 }
 
 .product-image-wrapper:hover .product-details {
@@ -1623,7 +1622,7 @@ a.button:hover {
 .single-product-gallery-slider {
   display: flex;
   gap: 12px;
-  /* max-height: 450px; */
+  max-height: 848px;
 
   @media screen and (max-width: 900px) {
     flex-direction: column-reverse;
@@ -1687,15 +1686,26 @@ a.button:hover {
     margin-top: 32px;
   }
 }
-*/ .single-product-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 30px;
+
+.single-product-details {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 300px; /* možeš promeniti po potrebi */
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .single-product-details p {
-  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.single-product-details strong {
+  color: #111;
 }
 
 .single-product-details-section {

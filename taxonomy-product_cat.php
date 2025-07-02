@@ -45,7 +45,7 @@ get_header(); ?>
                             <div class="product-card">
                                 <a href="<?php the_permalink(); ?>" class="product-link">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="product-image">
+                                        <img src="<?php echo get_the_post_thumbnail_url(null, 'woocommerce_thumbnail'); ?>" alt="<?php the_title_attribute(); ?>" class="product-image">
                                     <?php else : ?>
                                         <img src="<?php echo esc_url(woocommerce_placeholder_img_src()); ?>" alt="Placeholder" class="product-image">
                                     <?php endif; ?>

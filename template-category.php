@@ -54,7 +54,7 @@ get_header(); ?>
                                 <?php if (has_post_thumbnail()) : ?>
                                     <a href="<?php echo get_permalink(); ?>">
                                         <div class="product-image-wrapper">
-                                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="product-image">
+                                            <img src="<?php echo get_the_post_thumbnail_url(null, 'woocommerce_thumbnail'); ?>" alt="<?php the_title_attribute(); ?>" class="product-image">
 
                                             <?php 
                                                 $sirina = get_field('sirina');

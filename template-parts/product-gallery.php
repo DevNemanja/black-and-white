@@ -67,7 +67,7 @@ if (class_exists('WooCommerce')) {
         gap: 12px;
         overflow-x: auto;
         scrollbar-width: thin;
-        /* za Firefox */
+        min-width: 100px;
     }
 
     .single-product-swiper-pagination .thumb {

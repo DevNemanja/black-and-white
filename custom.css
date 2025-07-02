@@ -18,7 +18,7 @@
 .title {
   color: #171717;
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: normal;
 
@@ -130,7 +130,7 @@ a.button:hover {
 }
 
 .hero::after {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -194,7 +194,7 @@ a.button:hover {
 .hero-title h1 {
   margin: 0;
   font-size: 96px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: 400;
 
@@ -210,7 +210,7 @@ a.button:hover {
 .hero-title p {
   margin: 0;
   font-size: 32px;
-  font-family: 'Inter', serif;
+  font-family: "Inter", serif;
   line-height: 1;
   font-weight: 300;
 
@@ -231,10 +231,18 @@ a.button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 100%
+  );
 
   @media screen and (max-width: 768px) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(16, 16, 16, 0) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(16, 16, 16, 0) 100%
+    );
   }
 }
 
@@ -269,7 +277,7 @@ a.button:hover {
 }
 
 .counter-number {
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
   font-size: 64px;
   color: #171717;
 
@@ -542,7 +550,7 @@ a.button:hover {
 
 .navigation::after {
   @media screen and (max-width: 1240px) {
-    content: '';
+    content: "";
     border: 2px solid #171717;
     inset: 20px;
     position: absolute;
@@ -622,7 +630,7 @@ a.button:hover {
 }
 
 .navigation li:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   width: 100%;
@@ -892,6 +900,7 @@ a.button:hover {
 .product-image-wrapper {
   position: relative;
   overflow: hidden;
+  width: 170px;
 }
 
 .product-image-wrapper:hover .product-details {
@@ -1055,7 +1064,11 @@ a.button:hover {
 /* overlapping images section */
 .embroidery-section {
   padding-top: 100px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 25%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(16, 16, 16, 0) 25%
+  );
 }
 
 .embroidery-text-above-title {
@@ -1074,7 +1087,7 @@ a.button:hover {
 
 .embroidery-title {
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -1119,7 +1132,7 @@ a.button:hover {
 
 .overlapping-content-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -1165,7 +1178,7 @@ a.button:hover {
 
 .embroidery-slider-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -1216,12 +1229,14 @@ a.button:hover {
   bottom: 0;
 }
 
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet {
   background: #fff;
   border: 1px solid #171717;
   opacity: 1;
 }
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet-active {
   background: #171717;
 }
 
@@ -1263,7 +1278,7 @@ a.button:hover {
 
 .about-us-slider-title {
   font-size: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   color: #171717;
   font-weight: 500;
   margin: 0;
@@ -1336,7 +1351,7 @@ a.button:hover {
 .form-section-title {
   color: #171717;
   font-size: 48px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   line-height: 1;
   font-weight: normal;
   margin-bottom: 20px;
@@ -1397,7 +1412,7 @@ a.button:hover {
   padding: 50px;
 }
 
-.form-container textarea[name='your-message'] {
+.form-container textarea[name="your-message"] {
   width: 100%; /* Make it responsive to container */
   height: 120px; /* Set a smaller height */
 }
@@ -1529,7 +1544,7 @@ a.button:hover {
 
 /* Style the submit button */
 .wpcf7-form button,
-.form-container input[type='submit'],
+.form-container input[type="submit"],
 .form-container button {
   display: flex;
   align-items: center;
@@ -1547,7 +1562,7 @@ a.button:hover {
 }
 
 .form-container button::after {
-  content: '';
+  content: "";
   width: 10px;
   height: 10px;
   display: block;
@@ -1582,7 +1597,7 @@ a.button:hover {
   font-weight: 400;
   text-transform: uppercase;
   color: #171717;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   margin: 0;
   margin-bottom: 16px;
   line-height: 1.2;
@@ -1608,7 +1623,7 @@ a.button:hover {
 .single-product-gallery-slider {
   display: flex;
   gap: 12px;
-  max-height: 450px;
+  /* max-height: 450px; */
 
   @media screen and (max-width: 900px) {
     flex-direction: column-reverse;
@@ -1704,7 +1719,7 @@ a.button:hover {
   font-weight: 500;
   font-size: 26px;
   margin-bottom: 32px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   text-transform: uppercase;
   color: #171717;
 }
@@ -1713,10 +1728,21 @@ a.button:hover {
   margin: 0;
   display: flex;
   gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .single-product-upsell-products li {
+  flex: 0 0 auto; /* sprečava rastezanje i omogućava horizontalni scroll */
+  width: 170px; /* prilagodi po potrebi, može i 300px npr. */
   list-style: none;
+
+  @media screen and (max-width: 768px) {
+    width: 130px;
+  }
 }
 
 .single-product-upsell-products a {
@@ -1726,6 +1752,10 @@ a.button:hover {
 .single-product-upsell-products img {
   max-width: 230px;
   display: block;
+
+  @media screen and (max-width: 768px) {
+    max-width: 130px;
+  }
 }
 
 .single-product-upsell-products h3 {

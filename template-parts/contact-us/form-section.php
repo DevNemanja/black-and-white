@@ -44,10 +44,7 @@
                     if ($locale === 'sr_RS') {
                         $monFriHrs = get_theme_mod('wholesale_working_hours_mon_fri');
                         $satHrs = get_theme_mod('wholesale_working_hours_sat');
-                    } else {
-                        $monFriHrs = get_theme_mod('wholesale_working_hours_mon_fri_eng');
-                        $satHrs = get_theme_mod('wholesale_working_hours_sat_eng');
-                    }
+                    } 
 
                     $location = get_theme_mod('wholesale_address');
                     $mail = get_theme_mod('wholesale_email');

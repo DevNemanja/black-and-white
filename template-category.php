@@ -41,6 +41,8 @@ get_header(); ?>
                             'terms'    => $category_id,
                         ),
                     ),
+                    'orderby'        => 'title', // Sort by product title
+                    'order'          => 'ASC',
                 );
 
                 // Execute the product query

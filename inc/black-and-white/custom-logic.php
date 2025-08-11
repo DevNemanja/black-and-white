@@ -61,11 +61,11 @@ function mytheme_customize_register($wp_customize) {
         'type'       => 'text',
     ));
 
-    $wp_customize->add_setting('wholesale_working_hours_sat eng', array(
+    $wp_customize->add_setting('wholesale_working_hours_sat_eng', array(
         'default'   => '',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control('wholesale_working_hours_sat eng', array(
+    $wp_customize->add_control('wholesale_working_hours_sat_eng', array(
         'label'      => __('Wholesale Working Hours (Sat) - eng', 'mytheme'),
         'section'    => 'store_info_section',
         'type'       => 'text',

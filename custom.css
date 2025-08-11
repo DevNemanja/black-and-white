@@ -940,7 +940,7 @@ a.button:hover {
 
 .product-title {
   margin-top: 6px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 
   @media screen and (max-width: 1240px) {

@@ -504,7 +504,8 @@ a.button:hover {
   display: block;
 }
 
-.header-logo {
+.header-logo,
+.woocommerce img.header-logo {
   width: 205px;
   display: block;
 
@@ -521,6 +522,10 @@ a.button:hover {
   width: 100%;
   color: white;
   font-size: 20px;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 18px;
+  }
 }
 
 .navigation {

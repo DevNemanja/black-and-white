@@ -184,7 +184,6 @@ a.button:hover {
   text-align: center;
   padding: 40px 60px;
   margin: 0 20px;
-  background-color: rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 768px) {
     padding: 20px 40px;

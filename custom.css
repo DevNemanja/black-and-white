@@ -942,11 +942,11 @@ a.button:hover {
 
 .product-title {
   margin-top: 6px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 
   @media screen and (max-width: 1240px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -958,7 +958,7 @@ a.button:hover {
 .products-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 55px;
+  gap: 30px;
   justify-content: center; /* Center the grid within the container if necessary */
   padding: 20px; /* Optional padding for spacing around the grid */
   margin-top: 40px;

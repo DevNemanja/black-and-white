@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Category Template
  * Description: A custom template for displaying the Category with the title based on the current language.
@@ -7,28 +8,28 @@
 get_header(); ?>
 
 <main class="site-main">
-    <?php 
-        // Get the current term object
-        $term = get_queried_object();
+    <?php
+    // Get the current term object
+    $term = get_queried_object();
 
-        // Fetch custom fields associated with the term
-        $naslov = get_field('naslov', $term);
-        $podnaslov = get_field('podnaslov', $term);
-        $naslovna_slika = get_field('slika', $term);
-        $is_small = TRUE;
+    // Fetch custom fields associated with the term
+    $naslov = get_field('naslov', $term);
+    $podnaslov = get_field('podnaslov', $term);
+    $naslovna_slika = get_field('slika', $term);
+    $is_small = TRUE;
 
-        $title = get_field('sekundarni_naslov', $term);
-        $text = get_field('opis_ispod_sekundarnog_naslova', $term);
-        $category_id = get_field('kategorija', $term);
+    $title = get_field('sekundarni_naslov', $term);
+    $text = get_field('opis_ispod_sekundarnog_naslova', $term);
+    $category_id = get_field('kategorija', $term);
 
-        // Include the hero and centered content templates
-        require('template-parts/hero.php'); 
-        require('template-parts/centered-content.php');
+    // Include the hero and centered content templates
+    require('template-parts/hero.php');
+    require('template-parts/centered-content.php');
     ?>
 
     <div class="container">
         <div class="product-category-page">
-            <?php if ($category_id) : 
+            <?php if ($category_id) :
                 // Define query arguments for fetching products
                 $args = array(
                     'post_type' => 'product',
@@ -58,70 +59,70 @@ get_header(); ?>
                                         <div class="product-image-wrapper">
                                             <img src="<?php echo get_the_post_thumbnail_url(null, 'woocommerce_thumbnail'); ?>" alt="<?php the_title_attribute(); ?>" class="product-image">
 
-                                            <?php 
-                                                $sirina = get_field('sirina');
-                                                $tezina = get_field('tezina');
+                                            <?php
+                                            $sirina = get_field('sirina');
+                                            $tezina = get_field('tezina');
 
-                                                // Display product details based on the language
-                                                if (get_locale() === 'sr_RS') :
-                                                    $sirovinski_sastav = get_field('sirovinski_sastav');
-                                                    $naziv = get_field('naziv_proizvoda');
+                                            // Display product details based on the language
+                                            if (get_locale() === 'sr_RS') :
+                                                $sirovinski_sastav = get_field('sirovinski_sastav');
+                                                $naziv = get_field('naziv_proizvoda');
 
-                                                    if ($sirovinski_sastav || $sirina || $tezina) : ?>
-                                                        <div class="product-details">
-                                                            <?php if ($sirovinski_sastav) : ?>
-                                                                <p><strong><?php _e('Sirovinski sastav', 'your-text-domain'); ?>:</strong> 
-                                                                    <?php echo esc_html($sirovinski_sastav); ?>
-                                                                </p>
-                                                            <?php endif; ?>
+                                                if ($sirovinski_sastav || $sirina || $tezina) : ?>
+                                                    <div class="product-details">
+                                                        <?php if ($sirovinski_sastav) : ?>
+                                                            <p><strong><?php _e('Sirovinski sastav', 'your-text-domain'); ?>:</strong>
+                                                                <?php echo esc_html($sirovinski_sastav); ?>
+                                                            </p>
+                                                        <?php endif; ?>
 
-                                                            <?php if ($sirina) : ?>
-                                                                <p><strong><?php _e('Širina', 'your-text-domain'); ?>:</strong> 
-                                                                    <?php echo esc_html($sirina); ?> cm
-                                                                </p>
-                                                            <?php endif; ?>
+                                                        <?php if ($sirina) : ?>
+                                                            <p><strong><?php _e('Širina', 'your-text-domain'); ?>:</strong>
+                                                                <?php echo esc_html($sirina); ?> cm
+                                                            </p>
+                                                        <?php endif; ?>
 
-                                                            <?php if ($tezina) : ?>
-                                                                <p><strong><?php _e('Težina', 'your-text-domain'); ?>:</strong> 
-                                                                    <?php echo esc_html($tezina); ?> gr/m²
-                                                                </p>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                    <?php endif; ?>
-
-                                                <?php else : ?>
-                                                    <?php 
-                                                        $sirovinski_sastav_eng = get_field('sirovinski_sastav_eng');
-
-                                                        $nazivEng = get_field('naziv_proizvoda_eng');
-                                                        
-                                                        if ($sirovinski_sastav_eng || $sirina || $tezina) : ?>
-                                                        <div class="product-details">
-                                                            <?php if ($sirovinski_sastav_eng) : ?>
-                                                                <p><stroform-info-dividerng><?php _e('Composition', 'your-text-domain'); ?>:</stroform-info-dividerng> 
-                                                                    <?php echo esc_html($sirovinski_sastav_eng); ?>
-                                                                </p>
-                                                            <?php endif; ?>
-
-                                                            <?php if ($sirina) : ?>
-                                                                <p><strong><?php _e('Width', 'your-text-domain'); ?>:</strong> 
-                                                                    <?php echo esc_html($sirina); ?> cm
-                                                                </p>
-                                                            <?php endif; ?>
-
-                                                            <?php if ($tezina) : ?>
-                                                                <p><strong><?php _e('Weight', 'your-text-domain'); ?>:</strong> 
-                                                                    <?php echo esc_html($tezina); ?> gsm 
-                                                                </p>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                    <?php endif; ?>
+                                                        <?php if ($tezina) : ?>
+                                                            <p><strong><?php _e('Težina', 'your-text-domain'); ?>:</strong>
+                                                                <?php echo esc_html($tezina); ?> gr/m²
+                                                            </p>
+                                                        <?php endif; ?>
+                                                    </div>
                                                 <?php endif; ?>
+
+                                            <?php else : ?>
+                                                <?php
+                                                $sirovinski_sastav_eng = get_field('sirovinski_sastav_eng');
+
+                                                $nazivEng = get_field('naziv_proizvoda_eng');
+
+                                                if ($sirovinski_sastav_eng || $sirina || $tezina) : ?>
+                                                    <div class="product-details">
+                                                        <?php if ($sirovinski_sastav_eng) : ?>
+                                                            <p><strong><?php _e('Composition', 'your-text-domain'); ?>:</strong>
+                                                                <?php echo esc_html($sirovinski_sastav_eng); ?>
+                                                            </p>
+                                                        <?php endif; ?>
+
+                                                        <?php if ($sirina) : ?>
+                                                            <p><strong><?php _e('Width', 'your-text-domain'); ?>:</strong>
+                                                                <?php echo esc_html($sirina); ?> cm
+                                                            </p>
+                                                        <?php endif; ?>
+
+                                                        <?php if ($tezina) : ?>
+                                                            <p><strong><?php _e('Weight', 'your-text-domain'); ?>:</strong>
+                                                                <?php echo esc_html($tezina); ?> gsm
+                                                            </p>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
 
                                         </div>
                                     </a>
 
-                                    
+
 
                                 <?php else : ?>
                                     <a href="<?php echo get_permalink(); ?>">
@@ -132,9 +133,9 @@ get_header(); ?>
                                 <?php endif; ?>
                                 <h2 class="product-title">
                                     <a href="<?php echo get_permalink(); ?>">
-                                        <?php 
-                                            // Display the product title based on the current language
-                                            echo esc_html(get_locale() === 'sr_RS' ? ($naziv ? $naziv : get_the_title()) : ($nazivEng ? $nazivEng : get_the_title()));
+                                        <?php
+                                        // Display the product title based on the current language
+                                        echo esc_html(get_locale() === 'sr_RS' ? ($naziv ? $naziv : get_the_title()) : ($nazivEng ? $nazivEng : get_the_title()));
                                         ?>
                                     </a>
                                 </h2>
@@ -145,7 +146,7 @@ get_header(); ?>
 
                 <!-- Pagination -->
                 <div class="pagination">
-                    <?php 
+                    <?php
                     echo paginate_links(array(
                         'total' => $query->max_num_pages,
                         'prev_text' => '«',
@@ -154,9 +155,9 @@ get_header(); ?>
                     ?>
                 </div>
 
-                <?php 
+            <?php
                 // Reset the WP_Query object
-                wp_reset_postdata(); 
+                wp_reset_postdata();
             else : ?>
                 <p><?php _e('Category ID is missing or invalid.', 'your-text-domain'); ?></p>
             <?php endif; ?>

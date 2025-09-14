@@ -1647,10 +1647,28 @@ a.button:hover {
 
 .single-product-swiper-pagination {
   @media screen and (max-width: 900px) {
-    .thumb {
-      max-height: 72px;
-      max-width: 72px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.single-product-swiper-pagination .thumb img {
+  display: block;
+}
+
+.single-product-swiper-pagination .thumb.active {
+  opacity: 1;
+}
+
+.single-product-swiper-pagination .thumb {
+  margin-bottom: 12px;
+  opacity: 0.8;
+
+  @media screen and (max-width: 900px) {
+    max-height: 72px;
+    max-width: 72px;
+    margin-bottom: 0;
+    margin-right: 12px;
   }
 }
 
@@ -1929,7 +1947,8 @@ a.button:hover {
   background-image: url('/wp-content/themes/black-and-white/images/en.svg');
 }
 
-.form-container .wpcf7 form.sent .wpcf7-response-output {
+.form-container .wpcf7 form.sent .wpcf7-response-output,
+.site-main .wpcf7 form.sent .wpcf7-response-output {
   border-color: #def6de;
   background: #def6de;
   padding: 20px;
@@ -1938,7 +1957,8 @@ a.button:hover {
   margin-left: 0;
 }
 
-.form-container .wpcf7 form.invalid .wpcf7-response-output {
+.form-container .wpcf7 form.invalid .wpcf7-response-output,
+.site-main .wpcf7 form.invalid .wpcf7-response-output {
   border-color: #ffd68c;
   background: #ffd68c;
   padding: 20px;
@@ -1947,7 +1967,8 @@ a.button:hover {
   margin-left: 0;
 }
 
-.form-container .wpcf7-not-valid-tip {
+.form-container .wpcf7-not-valid-tip,
+.site-main .wpcf7-not-valid-tip {
   margin-top: 6px;
   font-size: 12px;
 }

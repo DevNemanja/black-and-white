@@ -1,6 +1,7 @@
 <?php
 
-function mytheme_customize_register($wp_customize) {
+function mytheme_customize_register($wp_customize)
+{
     // Add a section for Store Info
     $wp_customize->add_section('store_info_section', array(
         'title'      => __('Store Info', 'mytheme'),
@@ -236,27 +237,30 @@ function mytheme_customize_register($wp_customize) {
     )));
 }
 
-add_action( 'customize_register', 'mytheme_customize_register' );
+add_action('customize_register', 'mytheme_customize_register');
 
 // Add WooCommerce support to your theme
-function mytheme_add_woocommerce_support() {
+function mytheme_add_woocommerce_support()
+{
     add_theme_support('woocommerce');
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
-function mytheme_enqueue_styles() {
+function mytheme_enqueue_styles()
+{
     // Enqueue the parent theme stylesheet (if applicable)
     if (is_child_theme()) {
         wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     }
 
     // Enqueue the custom stylesheet
-    wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/custom.css', array(), '1.4.0', 'all');
+    wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/custom.css', array(), '1.8.0', 'all');
 }
 
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
 
-function mytheme_register_menus() {
+function mytheme_register_menus()
+{
     register_nav_menus(array(
         'footer_menu_1' => __('Footer Menu 1', 'mytheme'),
         'footer_menu_2' => __('Footer Menu 2', 'mytheme'),
@@ -265,7 +269,8 @@ function mytheme_register_menus() {
 }
 add_action('after_setup_theme', 'mytheme_register_menus');
 
-function custom_woocommerce_products_per_page($query) {
+function custom_woocommerce_products_per_page($query)
+{
     if (!is_admin() && $query->is_main_query() && is_product_category()) {
         // Set the number of products per page
         $query->set('posts_per_page', 15); // Change 12 to your desired number
@@ -273,7 +278,8 @@ function custom_woocommerce_products_per_page($query) {
 }
 add_action('pre_get_posts', 'custom_woocommerce_products_per_page');
 
-function enqueue_custom_js() {
+function enqueue_custom_js()
+{
     wp_enqueue_script(
         'custom-js', // Handle for the script
         get_template_directory_uri() . '/custom.js', // Path to the script
@@ -284,7 +290,8 @@ function enqueue_custom_js() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_js');
 
-function enqueue_slider_assets() {
+function enqueue_slider_assets()
+{
     // Swiper CSS
     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '9.0.0');
     // Swiper JS

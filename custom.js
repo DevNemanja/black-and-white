@@ -97,57 +97,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Selektuj sve slike
   const images = document.querySelectorAll('.single-product-main-image .swiper-slide img');
   const sliderImages = document.querySelectorAll('.single-product-swiper .swiper-slide img');
 
-  images.forEach((img) => {
+  function setupZoom(img) {
+    img.dataset.zoomLevel = '1.2';
+    img.dataset.origin = 'center center';
+
+    img.addEventListener('click', () => {
+      let level = parseFloat(img.dataset.zoomLevel);
+
+      if (level === 1.2) level = 2;
+      else if (level === 2) level = 3;
+      else level = 1.2;
+
+      img.dataset.zoomLevel = level.toString();
+
+      // Odmah primeni novi zoom
+      img.style.transformOrigin = img.dataset.origin;
+      img.style.transform = `scale(${level})`;
+      img.style.transition = 'transform 0.2s';
+    });
+
     img.addEventListener('mousemove', (e) => {
       const rect = img.getBoundingClientRect();
-      const x = e.clientX - rect.left; // pozicija miša u slici
+      const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const originX = (x / rect.width) * 100; // u procentima
+      const originX = (x / rect.width) * 100;
       const originY = (y / rect.height) * 100;
 
-      img.style.transformOrigin = `${originX}% ${originY}%`;
-      img.style.transform = 'scale(1.2)';
+      const origin = `${originX}% ${originY}%`;
+      img.dataset.origin = origin;
+
+      const zoom = parseFloat(img.dataset.zoomLevel);
+      img.style.transformOrigin = origin;
+      img.style.transform = `scale(${zoom})`;
+      img.style.transition = 'transform 0.2s';
     });
 
     img.addEventListener('mouseleave', () => {
       img.style.transformOrigin = 'center center';
       img.style.transform = 'scale(1)';
     });
-  });
+  }
 
-  sliderImages.forEach((img) => {
-    img.addEventListener('mousemove', (e) => {
-      const rect = img.getBoundingClientRect();
-      const x = e.clientX - rect.left; // pozicija miša u slici
-      const y = e.clientY - rect.top;
-
-      const originX = (x / rect.width) * 100; // u procentima
-      const originY = (y / rect.height) * 100;
-
-      img.style.transformOrigin = `${originX}% ${originY}%`;
-      img.style.transform = 'scale(1.2)';
-    });
-
-    img.addEventListener('mouseleave', () => {
-      img.style.transformOrigin = 'center center';
-      img.style.transform = 'scale(1)';
-    });
-  });
+  images.forEach(setupZoom);
+  sliderImages.forEach(setupZoom);
 
   var swiper = new Swiper('.single-product-swiper', {
     loop: true,
-
     spaceBetween: 10,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
     thumbs: {
       swiper: swiper,
     },

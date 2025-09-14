@@ -1611,6 +1611,9 @@ a.button:hover {
   transition: 0.2s;
   transform-origin: center center;
 }
+.zoom-in {
+  cursor: zoom-in;
+}
 
 .single-product-content {
   font-size: 16px;

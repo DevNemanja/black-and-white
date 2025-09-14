@@ -909,6 +909,10 @@ a.button:hover {
   overflow: hidden;
 }
 
+.product-image-wrapper:hover {
+  z-index: 10;
+}
+
 .product-image-wrapper:hover .product-details {
   top: 0;
 
@@ -1613,6 +1617,7 @@ a.button:hover {
 }
 .zoom-in {
   cursor: zoom-in;
+  display: block;
 }
 
 .single-product-content {
@@ -1626,10 +1631,26 @@ a.button:hover {
   display: flex;
   gap: 12px;
   max-height: 848px;
+  flex-direction: row-reverse;
 
   @media screen and (max-width: 900px) {
-    flex-direction: column-reverse;
-    max-height: 100%;
+    display: block;
+  }
+}
+
+.single-product-swiper {
+  overflow: hidden;
+  @media screen and (max-width: 900px) {
+    margin-bottom: 16px;
+  }
+}
+
+.single-product-swiper-pagination {
+  @media screen and (max-width: 900px) {
+    .thumb {
+      max-height: 72px;
+      max-width: 72px;
+    }
   }
 }
 

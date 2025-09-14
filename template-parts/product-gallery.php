@@ -12,6 +12,21 @@ if (class_exists('WooCommerce')) {
 ?>
 
 <div class="<?php echo esc_attr($containerClass); ?> images-wrapper">
+    <!-- Main Image Swiper -->
+    <div class="swiper single-product-swiper">
+        <div class="swiper-wrapper">
+            <?php foreach ($gallery_image_ids as $image_id) :
+                $image_url = wp_get_attachment_image_url($image_id, 'full');
+                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Image';
+            ?>
+                <div class="swiper-slide">
+                    <img class="zoom-in" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+    </div>
+
     <?php if (!empty($gallery_image_ids)) : ?>
         <!-- Thumbnail Pagination Swiper -->
         <div class="single-product-swiper-pagination">
@@ -27,20 +42,7 @@ if (class_exists('WooCommerce')) {
 
         </div>
 
-        <!-- Main Image Swiper -->
-        <div class="swiper single-product-swiper">
-            <div class="swiper-wrapper">
-                <?php foreach ($gallery_image_ids as $image_id) :
-                    $image_url = wp_get_attachment_image_url($image_id, 'full');
-                    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: 'Product Image';
-                ?>
-                    <div class="swiper-slide">
-                        <img class="zoom-in" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
-                    </div>
-                <?php endforeach; ?>
-            </div>
 
-        </div>
 
     <?php else : ?>
         <!-- Just the Featured Image -->

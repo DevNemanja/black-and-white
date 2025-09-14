@@ -1928,3 +1928,26 @@ a.button:hover {
 .menu-item.lang-item-en a::before {
   background-image: url('/wp-content/themes/black-and-white/images/en.svg');
 }
+
+.form-container .wpcf7 form.sent .wpcf7-response-output {
+  border-color: #def6de;
+  background: #def6de;
+  padding: 20px;
+  font-family: 'Marcellus';
+  font-size: 18px;
+  margin-left: 0;
+}
+
+.form-container .wpcf7 form.invalid .wpcf7-response-output {
+  border-color: #ffd68c;
+  background: #ffd68c;
+  padding: 20px;
+  font-family: 'Marcellus';
+  font-size: 18px;
+  margin-left: 0;
+}
+
+.form-container .wpcf7-not-valid-tip {
+  margin-top: 6px;
+  font-size: 12px;
+}

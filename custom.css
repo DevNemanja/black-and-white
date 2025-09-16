@@ -13,6 +13,11 @@
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  @media screen and (max-width: 768px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .title {
@@ -125,7 +130,7 @@ a.button:hover {
   }
 
   @media screen and (max-width: 768px) {
-    min-height: 400px;
+    min-height: 500px;
   }
 }
 
@@ -551,7 +556,7 @@ a.button:hover {
     background: rgba(255, 255, 255, 0.98);
     width: 100%;
     text-align: center;
-    padding: 140px 20px;
+    padding: 110px 20px;
   }
 }
 
@@ -1075,6 +1080,10 @@ a.button:hover {
 .embroidery-section {
   padding-top: 100px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(16, 16, 16, 0) 25%);
+
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
 }
 
 .embroidery-text-above-title {
@@ -1152,6 +1161,10 @@ a.button:hover {
 
 .overlapping-content {
   padding-top: 12.5%;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 25%;
+  }
 }
 
 .overlapping-content-text {
@@ -1413,6 +1426,10 @@ a.button:hover {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 50px;
+
+  @media screen and (max-width: 768px) {
+    padding: 30px;
+  }
 }
 
 .form-container textarea[name='your-message'] {
@@ -1835,7 +1852,7 @@ a.button:hover {
 }
 
 .def-page {
-  padding: 140px 40px;
+  padding: 140px 0;
   max-width: 1000px;
   margin: 0 auto;
 }

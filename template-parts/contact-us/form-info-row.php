@@ -24,7 +24,7 @@
         </svg>
         </div>
 
-        <div>
+        <div class="max-content">
             <p><?php echo $monFriHrs ?></p> 
             <p><?php echo $satHrs ?></p>
         </div>

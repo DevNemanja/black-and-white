@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     loop: true, // Enables infinite loop
     autoplay: {
-      delay: 7000, // Delay between slides
+      delay: 25000, // Delay between slides
     },
     speed: 1000,
   });
@@ -97,8 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const images = document.querySelectorAll('.single-product-main-image .swiper-slide img');
-  const sliderImages = document.querySelectorAll('.single-product-swiper .swiper-slide img');
+  const images = document.querySelectorAll(
+    '.single-product-main-image .swiper-slide img'
+  );
+  const sliderImages = document.querySelectorAll(
+    '.single-product-swiper .swiper-slide img'
+  );
 
   function setupZoom(img) {
     img.dataset.zoomLevel = '1.2';
@@ -157,11 +161,15 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  document.querySelectorAll('.single-product-swiper-pagination .thumb').forEach((thumb, index) => {
-    thumb.addEventListener('click', () => {
-      swiper.slideToLoop(index);
-      document.querySelectorAll('.thumb').forEach((t) => t.classList.remove('active'));
-      thumb.classList.add('active');
+  document
+    .querySelectorAll('.single-product-swiper-pagination .thumb')
+    .forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        swiper.slideToLoop(index);
+        document
+          .querySelectorAll('.thumb')
+          .forEach((t) => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
     });
-  });
 });

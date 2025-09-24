@@ -254,7 +254,7 @@ function mytheme_enqueue_styles()
     }
 
     // Enqueue the custom stylesheet
-    wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/custom.css', array(), '1.8.0', 'all');
+    wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/custom.css', array(), '1.8.1', 'all');
 }
 
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');

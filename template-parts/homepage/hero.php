@@ -7,7 +7,7 @@
 <header class="hero" style="background-image: url('<?php echo esc_url($naslovna_slika); ?>');">
         <?php if ($video_link) : ?>
             <div class="hero-video-wrapper">
-                <video autoplay muted loop>
+                <video autoplay muted loop playsinline>
                     <source src="<?php echo esc_url($video_link); ?>" type="video/mp4" />
                 </video>
             </div>

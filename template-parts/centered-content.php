@@ -18,7 +18,7 @@
 
     <?php if (!empty($video)) : ?>
         <div class="centered-content-video-wrapper">
-            <video autoplay muted loop>
+            <video autoplay muted loop playsinline>
                 <source src="<?php echo esc_url($video); ?>" type="video/mp4" />
             </video>
         </div>
